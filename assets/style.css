@@ -1,0 +1,468 @@
+/* AeroScope 0.1.2: restrained GNOME/libadwaita styling.
+   Prefer system colors, widgets and spacing to custom dashboard chrome. */
+.sidebar { background: @window_bg_color; }
+.section-title { font-size: 14px; font-weight: 700; }
+.dim-label { font-size: 11px; opacity: .74; }
+.footnote { font-size: 11px; opacity: .7; }
+.count-bubble { background: alpha(@accent_color, .10); border-radius: 10px; padding: 3px 9px; font-weight: 600; }
+.plane-list { background: transparent; }
+.aircraft-list-row { border-bottom: 1px solid alpha(@borders, .12); background: transparent; }
+.aircraft-list-row:selected { background: transparent; }
+.aircraft-list-row button.list-button { border-radius: 0; background: transparent; box-shadow: none; border: 0; min-height: 44px; padding: 0; }
+.aircraft-list-row button.list-button:hover { background: alpha(@accent_color, .06); }
+.aircraft-list-row.selected-aircraft { background: alpha(@accent_color, .10); }
+.aircraft-name { font-weight: 650; font-size: 12px; }
+.aircraft-alt { font-size: 11px; font-weight: 600; }
+.numeric { font-size: 11px; font-variant-numeric: tabular-nums; }
+.aircraft-marker { background: transparent; border: none; box-shadow: none; padding: 0; min-height: 56px; min-width: 56px; }
+.aircraft-marker:hover { background: alpha(@accent_color, .06); border-radius: 50%; }
+.demo-tag { padding: 3px 9px; border-radius: 9px; background: alpha(@warning_color, .12); color: @window_fg_color; font-size: 10px; font-weight: 600; }
+.my-location-marker { background: @accent_bg_color; color: @accent_fg_color; padding: 6px; border-radius: 50%; box-shadow: 0 2px 7px alpha(black, .22); }
+
+/* 0.3.15: airport markers use a small aviation chip with the code visible on the map. */
+.airport-marker, .route-airport-marker {
+  min-height: 26px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid alpha(@window_fg_color, .22);
+  box-shadow: 0 1px 4px alpha(black, .22);
+}
+.airport-marker {
+  background: alpha(@window_bg_color, .92);
+  color: @window_fg_color;
+}
+.airport-marker:hover {
+  background: mix(@accent_bg_color, @window_bg_color, .75);
+}
+.airport-marker-content {
+  padding: 2px 8px 2px 6px;
+}
+.airport-marker-icon {
+  font-size: 11px;
+  opacity: .9;
+}
+.airport-marker-code {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+/* 0.3: unobtrusive list/inspector split; the aircraft itself receives a soft halo. */
+.aircraft-list-row button.list-button:hover { background: alpha(@accent_color, .09); }
+.aircraft-marker:hover { background: transparent; }
+
+/* 0.3.7: the photo itself is the affordance for enlargement. */
+.photo-preview-button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 9px;
+  padding: 0;
+}
+.photo-preview-button:hover { background: alpha(@accent_color, .06); }
+
+/* 0.3.8: one unified and categorised GNOME search popover. */
+.search-suggestions { padding: 0; }
+.search-suggestions list { background: transparent; }
+.search-suggestions row { border-radius: 6px; }
+.search-suggestions row:selected { background: alpha(@accent_color, .13); }
+.search-suggestions row:hover { background: alpha(@accent_color, .07); }
+.search-group-heading { font-weight: 700; font-size: 11px; opacity: .75; }
+.search-result-title { font-size: 12px; font-weight: 600; }
+
+/* 0.3.11: autocomplete is inside the sidebar, never a detached popup. */
+.search-suggestions-inline {
+  background: @card_bg_color;
+  border: 1px solid alpha(@window_fg_color, .12);
+  border-radius: 10px;
+  margin-top: 2px;
+}
+.search-suggestions-inline list { background: transparent; }
+.search-suggestions-inline row { border-radius: 5px; }
+.search-suggestions-inline row:selected { background: alpha(@accent_color, .13); }
+.search-suggestions-inline row:hover { background: alpha(@accent_color, .07); }
+
+/* 0.3.12/0.3.15: probable route airports keep the same chip style but with amber emphasis. */
+.route-airport-marker {
+  background: #b66b18;
+  color: #fff;
+  border-color: alpha(black, .18);
+}
+.route-airport-marker:hover {
+  background: #945312;
+}
+.route-airport-marker .airport-marker-icon,
+.route-airport-marker .airport-marker-code {
+  color: #fff;
+}
+
+/* 0.3.13: contextual history player; GNOME card rather than a permanent footer. */
+.replay-panel {
+  background: alpha(@window_bg_color, .96);
+  border: 1px solid alpha(@window_fg_color, .15);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px alpha(black, .24);
+  padding: 12px 16px;
+}
+.replay-panel scale trough { min-height: 5px; }
+.replay-aircraft-symbol {
+  background: #6542a6;
+  color: white;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 3px 8px;
+  box-shadow: 0 2px 6px alpha(black, .3);
+}
+.replay-aircraft-glyph { font-size: 27px; color: white; }
+.replay-aircraft-caption { font-size: 8px; font-weight: 800; color: white; }
+
+/* 0.3.14: replay uses the same aircraft silhouette as the live radar, in violet.
+   No rectangular marker, glyph or REPLAY plaque on the map. */
+.replay-aircraft-art { background: transparent; border: 0; box-shadow: none; }
+.replay-icon-accent { color: #aa82ed; }
+.replay-chart { background: alpha(@window_fg_color, .035); border-radius: 8px; }
+.replay-panel { padding: 10px 14px; }
+
+/* 0.3.18: compact GNOME sidebar tabs and independent favorite indicators. */
+.sidebar-tabs button { font-size: 11px; padding: 5px 7px; min-width: 0; }
+.favorite-star { color: #f1b726; font-size: 13px; font-weight: 900; }
+
+/* 0.3.22: the third GNOME sidebar tab highlights active squawk alerts.
+   Emergency is not synonymous with an audible MAYDAY call. */
+.sidebar-tabs.emergency-attention button:last-child {
+  background: alpha(@error_color, .16);
+  color: @error_color;
+}
+.sidebar-tabs.emergency-attention button:last-child:checked {
+  background: alpha(@error_color, .24);
+  color: @error_color;
+}
+
+/* 0.3.25: same ICAO24 alert on visible list and map marker. */
+.aircraft-alert-badge { font-size: 14px; font-weight: 900; }
+.aircraft-alert-badge.critical { color: #ed4556; }
+.aircraft-alert-badge.warning { color: #f2ae3d; }
+
+/* 0.3.27: compact independent map. The resize edge belongs to GTK/window WM;
+   no maximize, minimize or fullscreen buttons are introduced here. */
+.minimap-window .minimap-header {
+  min-height: 24px;
+  padding: 0 3px;
+  margin: 0;
+}
+.minimap-window .minimap-header > box,
+.minimap-window .minimap-header windowhandle {
+  min-height: 24px;
+  padding: 0;
+}
+.minimap-window .minimap-header windowcontrols button {
+  min-width: 21px;
+  min-height: 21px;
+  padding: 1px;
+  margin: 0 1px;
+}
+.minimap-window .minimap-title { font-size: 11px; font-weight: 700; }
+.minimap-window .minimap-top-control {
+  min-height: 21px;
+  min-width: 21px;
+  padding: 0;
+  margin: 0;
+}
+.minimap-window .minimap-zoom-group { background: transparent; }
+.minimap-window .minimap-zoom-button {
+  min-height: 24px;
+  min-width: 24px;
+  padding: 1px;
+  margin: 0;
+  border-radius: 5px;
+  background: alpha(@window_bg_color, .87);
+  color: @window_fg_color;
+  box-shadow: 0 1px 3px alpha(black, .18);
+}
+.minimap-window .minimap-license,
+.minimap-window .minimap-license label {
+  font-size: 8px;
+  padding: 0;
+  margin: 0;
+  opacity: .85;
+}
+.minimap-explanation { font-size: 10px; }
+.aircraft-context-menu button { min-width: 155px; }
+
+/* 0.3.28: small draggable GTK4 WindowHandle strip, replacing the tall HeaderBar. */
+.minimap-window .pip-compact-strip { min-height: 25px; padding: 1px 3px; background: @headerbar_bg_color; }
+.minimap-window .minimap-title { font-size: 10px; font-weight: 600; }
+.minimap-window .minimap-top-control { min-width: 23px; min-height: 22px; padding: 0; margin: 0; border-radius: 5px; }
+.minimap-window .minimap-zoom-group { margin: 2px; }
+.minimap-window .minimap-zoom-button { min-width: 22px; min-height: 22px; padding: 0; border-radius: 4px; }
+
+/* Greyed out observations are NOT active emergencies. */
+.emergency-history-ended { background: alpha(@window_fg_color, .035); opacity: .74; }
+.emergency-history-ended label { color: @window_fg_color; }
+.emergency-history-toggle { font-size: 11px; }
+
+/* 0.3.29: compact, aligned zoom/GeoClue controls on the main map. */
+.mainmap-zoom-group { background: transparent; }
+.mainmap-zoom-button {
+  min-height: 28px; min-width: 28px; padding: 1px; margin: 0;
+  border-radius: 6px; background: alpha(@window_bg_color, .90);
+  color: @window_fg_color; box-shadow: 0 1px 3px alpha(black, .20);
+}
+.emergency-history-button:checked {
+  color: @accent_fg_color; background: @accent_bg_color;
+}
+
+/* AeroScope 0.3.36 — compact, accessible aviation-weather overlays. */
+.weather-metar-marker {
+  font-size: 10px; font-weight: 700; min-height: 24px;
+  background: alpha(@window_bg_color, .91);
+  color: @window_fg_color;
+  border: 1px solid alpha(@accent_color, .45);
+  border-radius: 7px; padding: 2px 5px;
+}
+.weather-sigmet-marker {
+  font-size: 10px; font-weight: 700; min-height: 24px;
+  background: alpha(#914511, .87);
+  color: #ffffff; border-radius: 7px; padding: 2px 5px;
+}
+
+/* 0.3.40: airport labels are visible with and without METAR.
+   When a real NOAA category exists, display it as a compact suffix. */
+.airport-weather-category {
+  font-size: 9px;
+  font-weight: 800;
+  border-radius: 4px;
+  padding: 1px 4px;
+  background: alpha(@window_fg_color, .08);
+  color: @window_fg_color;
+}
+.airport-marker.metar-vfr .airport-weather-category { background: #236d42; color: white; }
+.airport-marker.metar-mvfr .airport-weather-category { background: #2d588d; color: white; }
+.airport-marker.metar-ifr .airport-weather-category { background: #9e3a37; color: white; }
+.airport-marker.metar-lifr .airport-weather-category { background: #702e8d; color: white; }
+
+
+/* 0.3.41: width of sidebar is decided by the draggable Paned divider,
+   never by long weather reports, aircraft names or emergency history. */
+.sidebar-detail-row { min-width: 0; }
+.sidebar-detail-long { margin-bottom: 4px; }
+.sidebar-detail-long label.numeric { margin-left: 1px; }
+.sidebar label { min-width: 0; }
+
+/* Report exists but NOAA did not classify the flight category: visible,
+   neutral badge rather than fabricated VFR. */
+.airport-marker.metar-metar .airport-weather-category {
+  background: #426985;
+  color: white;
+}
+
+/* SIGMET pictogram placed within its advisory area. The translucent dark
+   backing keeps lightning/ice/volcano symbols readable on light map tiles. */
+.weather-sigmet-marker {
+  background: rgba(42, 24, 25, .83);
+  color: #fff5eb;
+  border: 1px solid rgba(255, 175, 87, .9);
+  border-radius: 14px;
+  padding: 3px 7px;
+  font-weight: 700;
+  font-size: 11px;
+}
+.weather-sigmet-marker:hover { background: rgba(95, 41, 23, .96); }
+
+/* 0.3.44: a station instrument, not a generic airport or a weather forecast. */
+.weather-station-marker {
+  border-color: alpha(#65d6c6, .70);
+  background: alpha(#162e34, .92);
+  color: #f2fffb;
+  padding: 2px 6px;
+}
+.weather-station-marker:hover { background: alpha(#21474b, .97); }
+.weather-station-icon { min-width: 17px; min-height: 17px; }
+.weather-station-code { font-size: 10px; font-weight: 800; }
+.weather-station-category {
+  font-size: 9px; font-weight: 700;
+  color: #b7f3e9;
+  border-left: 1px solid alpha(#b7f3e9, .35);
+  padding-left: 4px;
+}
+
+/* 0.3.45: identical IP geolocation prompt on compact PiP and full map. */
+window.ip-location-dialog {
+  background: @window_bg_color;
+  color: @window_fg_color;
+  border-radius: 16px;
+  border: 1px solid alpha(@window_fg_color, .12);
+}
+
+/* 0.3.48 — SIGMET palette aligned with the optimized Cairo outlines.
+   Dark semi-opaque backgrounds preserve contrast against both map themes. */
+.weather-sigmet-marker { background: rgba(34, 39, 49, .90); color: #fff; }
+.weather-sigmet-marker.sigmet-storm { border-color: #ef732b; }
+.weather-sigmet-marker.sigmet-turbulence { border-color: #d4a638; }
+.weather-sigmet-marker.sigmet-icing { border-color: #4799e6; }
+.weather-sigmet-marker.sigmet-volcanic { border-color: #9e7059; }
+.weather-sigmet-marker.sigmet-cyclone { border-color: #ad73d1; }
+.weather-sigmet-marker.sigmet-mountain { border-color: #43aba3; }
+.weather-sigmet-marker.sigmet-dust { border-color: #b88757; }
+.weather-sigmet-marker.sigmet-radioactive { border-color: #ce5c66; }
+.weather-sigmet-marker.sigmet-generic { border-color: #90a3ba; }
+.weather-sigmet-marker.sigmet-legacy { border-color: #ff9121; }
+.weather-sigmet-marker:hover { background: rgba(32, 42, 50, .98); }
+
+/* Saved airport bookmarks, separate from monitored aircraft. */
+.airport-favorite-star { color: #e2aa27; font-size: 12px; font-weight: 850; margin-left: 2px; }
+
+/* 0.3.52: compact NOAA flight category in airport/station favorites. */
+.metar-favorite-category {
+  font-weight: 800;
+  font-size: 0.92em;
+  border-radius: 6px;
+  padding: 3px 8px;
+  background: alpha(@window_fg_color, .10);
+  color: @window_fg_color;
+}
+.metar-favorite-category.metar-vfr { background: #236d42; color: white; }
+.metar-favorite-category.metar-mvfr { background: #2d588d; color: white; }
+.metar-favorite-category.metar-ifr { background: #9e3a37; color: white; }
+.metar-favorite-category.metar-lifr { background: #702e8d; color: white; }
+.metar-favorite-category.metar-metar { background: #426985; color: white; }
+
+/* 0.3.59: subtle translucent surface over the map (90% opaque).
+   Only the card BACKGROUND is translucent: never set GtkWidget.opacity,
+   which would also fade METAR, SIGMET, text and the close/expand controls.
+   Uses GNOME's theme color in both light and dark appearances. */
+.dashboard-weather-card {
+  background: alpha(@window_bg_color, .90);
+  border: 1px solid alpha(@window_fg_color, .19);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px alpha(black, .26);
+  padding: 9px 12px 8px;
+}
+.dashboard-widget-header { min-height: 25px; }
+.dashboard-widget-title { font-weight: 700; font-size: 12px; }
+.dashboard-compact-category { font-size: 14px; font-weight: 800; }
+.dashboard-compact-category.metar-vfr { color: #27874e; }
+.dashboard-compact-category.metar-mvfr { color: #2866ba; }
+.dashboard-compact-category.metar-ifr { color: #c03b42; }
+.dashboard-compact-category.metar-lifr { color: #9b40aa; }
+.dashboard-widget-button { min-width: 22px; min-height: 22px; padding: 1px; border-radius: 5px; }
+.dashboard-widget-body { margin-top: 1px; }
+.dashboard-flight-category { font-size: 23px; font-weight: 850; }
+.dashboard-flight-category.metar-vfr { color: #27874e; }
+.dashboard-flight-category.metar-mvfr { color: #2866ba; }
+.dashboard-flight-category.metar-ifr { color: #c03b42; }
+.dashboard-flight-category.metar-lifr { color: #9b40aa; }
+.dashboard-field-title { font-size: 9px; opacity: .78; }
+.dashboard-field-value { font-size: 11px; font-weight: 600; }
+.dashboard-widget-stamp { font-size: 8px; opacity: .72; }
+.dashboard-exit-button {
+  background: alpha(@window_bg_color, .94);
+  border-radius: 8px;
+  padding: 3px;
+  box-shadow: 0 1px 5px alpha(black, .20);
+}
+
+/* 0.3.58: restrained SIGMET validity indicator, not a threat severity bar. */
+.sigmet-validity-timeline { margin-top: 5px; margin-bottom: 3px; }
+.sigmet-validity-track trough {
+  min-height: 4px;
+  background: alpha(@window_fg_color, .13);
+  border-radius: 4px;
+  border: 0;
+}
+.sigmet-validity-track progress {
+  min-height: 4px;
+  background: alpha(#cb8934, .88);
+  border-radius: 4px;
+  border: 0;
+}
+.sigmet-validity-times {
+  font-size: 9px;
+  opacity: .72;
+}
+
+/* Independent SIGMET warning in both expanded and collapsed panels. */
+.dashboard-sigmet-chip { color: #cb8934; font-size: 11px; font-weight: 750; }
+.dashboard-sigmet-title { color: #cb8934; font-size: 12px; font-weight: 750; }
+.dashboard-sigmet-box { margin-top: 4px; border-top: 1px solid alpha(@window_fg_color, .15); padding-top: 5px; }
+
+/* 0.3.60: aircraft panels share the translucent dashboard surface. */
+.dashboard-aircraft-card .dashboard-aircraft-status { font-size: 10px; font-weight: 700; }
+.dashboard-aircraft-card .dashboard-aircraft-live { color: #248954; }
+.dashboard-aircraft-card .dashboard-aircraft-stale { color: #b46d31; }
+.dashboard-aircraft-card .dashboard-aircraft-identity { font-size: 11px; font-weight: 700; }
+.dashboard-aircraft-card .dashboard-aircraft-metrics { font-size: 11px; }
+.dashboard-aircraft-card .dashboard-aircraft-extra { font-size: 10px; }
+
+/* Tiny dashboard header actions; the Follow state stays visible but restrained. */
+.dashboard-aircraft-card .dashboard-follow-active {
+  color: @accent_color;
+  background: alpha(@accent_color, .11);
+}
+
+/* 0.3.62: data-only telemetry panel; photos open from a tiny header action. */
+.dashboard-aircraft-card .dashboard-aircraft-identity { font-size: 15px; font-weight: 800; }
+.dashboard-aircraft-card .dashboard-aircraft-registration { font-size: 11px; font-weight: 650; }
+.dashboard-aircraft-card .dashboard-aircraft-model { font-size: 10px; opacity: .80; }
+.dashboard-aircraft-card .dashboard-aircraft-grid {
+  border-top: 1px solid alpha(@window_fg_color, .13);
+  border-bottom: 1px solid alpha(@window_fg_color, .13);
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.dashboard-aircraft-card .dashboard-aircraft-value { font-size: 12px; font-weight: 750; }
+.dashboard-aircraft-card .dashboard-aircraft-metadata { margin-top: 1px; }
+.dashboard-aircraft-card .dashboard-aircraft-location { font-size: 10px; font-weight: 550; }
+.dashboard-aircraft-card .dashboard-aircraft-code { font-size: 9px; opacity: .70; }
+.dashboard-aircraft-card .dashboard-aircraft-compact { font-size: 11px; font-weight: 650; }
+.dashboard-aircraft-card .dashboard-aircraft-alert {
+  font-size: 11px;
+  font-weight: 750;
+  border-radius: 5px;
+  background: alpha(#b47c26, .12);
+  color: #b47c26;
+  padding: 3px 5px;
+}
+.dashboard-aircraft-card .dashboard-alert-critical {
+  background: alpha(#c04444, .13);
+  color: #c04444;
+}
+
+/* 0.3.62: readable two-row telemetry even in the folded aircraft widget. */
+.dashboard-aircraft-card .dashboard-aircraft-compact-body { padding-top: 2px; }
+.dashboard-aircraft-card .dashboard-aircraft-compact-descriptor {
+  font-size: 10px;
+  opacity: .76;
+}
+.dashboard-aircraft-card .dashboard-aircraft-compact-grid {
+  border-top: 1px solid alpha(@window_fg_color, .11);
+  padding-top: 5px;
+}
+.dashboard-aircraft-card .dashboard-aircraft-compact-caption {
+  font-size: 9px;
+  opacity: .72;
+}
+.dashboard-aircraft-card .dashboard-aircraft-compact-value {
+  font-size: 12px;
+  font-weight: 720;
+}
+
+/* 0.3.65: persistent selection ring distinct from METAR category and hover. */
+.airport-marker.selected-location,
+.weather-station-marker.selected-location {
+  border: 2px solid @accent_color;
+  outline: 2px solid alpha(@accent_color, .52);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px alpha(@accent_color, .22), 0 2px 8px alpha(black, .25);
+}
+
+/* 0.3.65: compact shortcuts reference dialog. */
+.keyboard-shortcut-key {
+  font-size: 11px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid alpha(@window_fg_color, .18);
+  border-radius: 6px;
+  background: alpha(@window_fg_color, .055);
+  padding: 3px 7px;
+}

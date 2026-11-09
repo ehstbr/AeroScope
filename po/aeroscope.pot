@@ -1,0 +1,3706 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-09 17:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: aeroscope/aircraft_art.py:60
+#, python-brace-format
+msgid "ICAO type {value0}"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:60
+#: aeroscope/search_suggestions.py:102
+msgid "Unknown model"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:65
+msgid "Helicopter"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:66
+msgid "Light aviation"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:67
+msgid "Turboprop"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:68
+msgid "Regional jet"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:69
+msgid "Wide-body jet"
+msgstr ""
+
+#: aeroscope/aircraft_art.py:70
+msgid "Jet aircraft / unidentified"
+msgstr ""
+
+#: aeroscope/aircraft_card_data.py:45
+msgid "Level · 0 ft/min"
+msgstr ""
+
+#: aeroscope/aircraft_card_data.py:65
+msgid "Other"
+msgstr ""
+
+#: aeroscope/aircraft_card_data.py:66
+#: aeroscope/aircraft_widget.py:317
+msgid "Unknown"
+msgstr ""
+
+#: aeroscope/aircraft_card_data.py:78
+msgid "On ground"
+msgstr ""
+
+#: aeroscope/aircraft_card_data.py:91
+msgid "No callsign"
+msgstr ""
+
+#: aeroscope/aircraft_card_data.py:92
+#: aeroscope/ui.py:3179
+msgid "No registration"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:71
+#: aeroscope/aircraft_widget.py:353
+msgid "Waiting for signal"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:79
+#: aeroscope/aircraft_widget.py:290
+#: aeroscope/floating_widget.py:72
+#: aeroscope/floating_widget.py:178
+msgid "Expand panel"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:79
+#: aeroscope/aircraft_widget.py:290
+#: aeroscope/floating_widget.py:72
+#: aeroscope/floating_widget.py:178
+msgid "Collapse panel"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:87
+#: aeroscope/aircraft_widget.py:377
+#: aeroscope/ui.py:3876
+msgid "Enlarge photo"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:94
+#: aeroscope/monitor_ui.py:724
+#: aeroscope/ui.py:3162
+#: aeroscope/ui.py:3241
+msgid "Center aircraft on map"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:100
+#: aeroscope/aircraft_widget.py:244
+#: aeroscope/ui.py:3156
+#: aeroscope/ui.py:3243
+#: aeroscope/ui.py:4208
+msgid "Follow aircraft"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:106
+#: aeroscope/floating_widget.py:86
+msgid "Close floating panel"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:139
+#: aeroscope/aircraft_widget.py:202
+msgid "Altitude"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:140
+#: aeroscope/aircraft_widget.py:203
+msgid "Ground speed"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:141
+#: aeroscope/aircraft_widget.py:205
+msgid "Vertical speed"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:142
+#: aeroscope/aircraft_widget.py:204
+msgid "Ground track"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:143
+msgid "Squawk"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:144
+msgid "Position source"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:228
+#: aeroscope/aircraft_widget.py:358
+msgid "Awaiting aircraft position."
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:243
+#: aeroscope/ui.py:3156
+#: aeroscope/ui.py:4207
+msgid "Stop following"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:313
+#, python-brace-format
+msgid "Position: {value0}"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:314
+#, python-brace-format
+msgid "ICAO24: {value0}"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:347
+msgid "Live"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:350
+msgid "Signal lost"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:356
+#, python-brace-format
+msgid "Last ADS-B position: {value0} UTC"
+msgstr ""
+
+#: aeroscope/aircraft_widget.py:375
+#: aeroscope/data.py:548
+#: aeroscope/ui.py:3793
+#: aeroscope/ui.py:3880
+#: aeroscope/ui.py:3921
+msgid "Unknown author"
+msgstr ""
+
+#: aeroscope/airport_weather_badge.py:45
+#: aeroscope/airport_weather_badge.py:54
+msgid ""
+"\n"
+"Click for details and weather"
+msgstr ""
+
+#: aeroscope/airport_weather_badge.py:53
+msgid ""
+"\n"
+"METAR: no observation available yet"
+msgstr ""
+
+#: aeroscope/alerts.py:22
+#: aeroscope/monitor.py:23
+msgid "Unlawful interference"
+msgstr ""
+
+#: aeroscope/alerts.py:23
+msgid ""
+"Code 7500 or ADS-B signal of unlawful interference; situation not "
+"independently confirmed."
+msgstr ""
+
+#: aeroscope/alerts.py:25
+msgid "Emergency signaled"
+msgstr ""
+
+#: aeroscope/alerts.py:26
+msgid "Code 7700 or ADS-B emergency signal; does not confirm a MAYDAY declaration."
+msgstr ""
+
+#: aeroscope/alerts.py:28
+msgid "Communication failure"
+msgstr ""
+
+#: aeroscope/alerts.py:29
+msgid "Code 7600 or ADS-B signal of radio failure; severity cannot be inferred."
+msgstr ""
+
+#: aeroscope/alerts.py:31
+msgid "Minimum fuel"
+msgstr ""
+
+#: aeroscope/alerts.py:32
+msgid ""
+"Aircraft indicates fuel priority; this does not necessarily mean a declared "
+"emergency."
+msgstr ""
+
+#: aeroscope/alerts.py:34
+msgid "Priority operation"
+msgstr ""
+
+#: aeroscope/alerts.py:35
+msgid "Priority/medical support signal; not necessarily an emergency."
+msgstr ""
+
+#: aeroscope/dashboard.py:51
+#: aeroscope/monitor_ui.py:548
+msgid "Weather station"
+msgstr ""
+
+#: aeroscope/dashboard.py:51
+msgid "Airport"
+msgstr ""
+
+#: aeroscope/dashboard.py:80
+#, python-brace-format
+msgid "Maximum of {value0} floating panels reached."
+msgstr ""
+
+#: aeroscope/data.py:94
+#, python-brace-format
+msgid "{value0:,} feet"
+msgstr ""
+
+#: aeroscope/data.py:114
+msgid "Response exceeds the safe size limit."
+msgstr ""
+
+#: aeroscope/data.py:120
+msgid "Request limit (HTTP 429). Updates temporarily paused."
+msgstr ""
+
+#: aeroscope/data.py:121
+#, python-brace-format
+msgid "API unavailable (HTTP {value0})."
+msgstr ""
+
+#: aeroscope/data.py:123
+#, python-brace-format
+msgid "Cannot connect to service: {value0}"
+msgstr ""
+
+#: aeroscope/data.py:125
+msgid "The API returned invalid data."
+msgstr ""
+
+#: aeroscope/data.py:174
+msgid "Invalid coordinates or radius"
+msgstr ""
+
+#: aeroscope/data.py:185
+msgid "Invalid coverage request count"
+msgstr ""
+
+#: aeroscope/data.py:204
+msgid "The network did not respond to requests."
+msgstr ""
+
+#: aeroscope/data.py:211
+msgid "Invalid search"
+msgstr ""
+
+#: aeroscope/data.py:217
+msgid "Enter at least two characters"
+msgstr ""
+
+#: aeroscope/data.py:235
+#: aeroscope/ui.py:4436
+#, python-brace-format
+msgid "IP location unavailable: {value0}"
+msgstr ""
+
+#: aeroscope/data.py:235
+msgid "service did not return a valid response"
+msgstr ""
+
+#: aeroscope/data.py:238
+msgid "Location service returned invalid coordinates."
+msgstr ""
+
+#: aeroscope/data.py:242
+msgid "Approximate location"
+msgstr ""
+
+#: aeroscope/data.py:250
+msgid "Airport not in catalog"
+msgstr ""
+
+#: aeroscope/data.py:331
+msgid "ADSB.aero history is unavailable."
+msgstr ""
+
+#: aeroscope/data.py:344
+msgid "Invalid coordinates for route lookup"
+msgstr ""
+
+#: aeroscope/data.py:360
+msgid "Route provider response is too large."
+msgstr ""
+
+#: aeroscope/data.py:362
+msgid "Route provider returned an empty response. Try again later."
+msgstr ""
+
+#: aeroscope/data.py:366
+msgid "Route provider returned invalid data. Try again later."
+msgstr ""
+
+#: aeroscope/data.py:370
+msgid "Route request limit (HTTP 429)."
+msgstr ""
+
+#: aeroscope/data.py:372
+#, python-brace-format
+msgid "Route lookup unavailable (HTTP {value0})."
+msgstr ""
+
+#: aeroscope/data.py:374
+msgid "Could not retrieve origin and destination."
+msgstr ""
+
+#: aeroscope/data.py:379
+#, python-format
+msgid "routeset callsign=%s format=%s association=%s"
+msgstr ""
+
+#: aeroscope/data.py:380
+msgid "found"
+msgstr ""
+
+#: aeroscope/data.py:380
+msgid "not found"
+msgstr ""
+
+#: aeroscope/data.py:395
+msgid "Invalid historical search type."
+msgstr ""
+
+#: aeroscope/data.py:398
+msgid "Invalid aircraft identifier."
+msgstr ""
+
+#: aeroscope/data.py:401
+msgid "Invalid ICAO24."
+msgstr ""
+
+#: aeroscope/data.py:423
+#, python-format
+msgid "Historical search started: type=%s, query=%s, period=%s days, maximum=%s pages"
+msgstr ""
+
+#: aeroscope/data.py:431
+#, python-format
+msgid "Historical page received for %s: %s raw results"
+msgstr ""
+
+#: aeroscope/data.py:434
+msgid "The historical service returned an unexpected format."
+msgstr ""
+
+#: aeroscope/data.py:457
+#, python-format
+msgid "Historical search completed: query=%s, exact matches=%s"
+msgstr ""
+
+#: aeroscope/data.py:468
+#: aeroscope/data.py:590
+msgid "Invalid ICAO24 code"
+msgstr ""
+
+#: aeroscope/data.py:480
+#: aeroscope/data.py:492
+msgid "Invalid historical identifier"
+msgstr ""
+
+#: aeroscope/data.py:485
+msgid "This flight does not have enough positions and timestamps for playback"
+msgstr ""
+
+#: aeroscope/data.py:522
+#, python-format
+msgid "The photos field is not a list (type: %s)"
+msgstr ""
+
+#: aeroscope/data.py:540
+#, python-format
+msgid "Skipping unauthorized/invalid thumbnail URL: field=%s host=%s"
+msgstr ""
+
+#: aeroscope/data.py:544
+#, python-format
+msgid "Thumbnail found (field=%s, host=%s), photographer=%s"
+msgstr ""
+
+#: aeroscope/data.py:546
+msgid "not specified"
+msgstr ""
+
+#: aeroscope/data.py:549
+#, python-format
+msgid "JSON contains %s photos but no valid thumbnail (rejected URLs=%s)"
+msgstr ""
+
+#: aeroscope/data.py:560
+#, python-format
+msgid "Checking Planespotters for %s"
+msgstr ""
+
+#: aeroscope/data.py:573
+#, python-format
+msgid "Planespotters response is not valid JSON (%s)"
+msgstr ""
+
+#: aeroscope/data.py:574
+msgid "The photo API returned invalid data"
+msgstr ""
+
+#: aeroscope/data.py:579
+msgid "Planespotters: HTTP 429 request limit"
+msgstr ""
+
+#: aeroscope/data.py:583
+#, python-format
+msgid "Network failure at %s: %s"
+msgstr ""
+
+#: aeroscope/data.py:584
+#, python-brace-format
+msgid "Could not connect to Planespotters: {value0}"
+msgstr ""
+
+#: aeroscope/data.py:594
+msgid "registration "
+msgstr ""
+
+#: aeroscope/data.py:595
+#, python-format
+msgid "Starting photo search: ICAO24=%s registration=%s"
+msgstr ""
+
+#: aeroscope/data.py:596
+msgid "(not specified)"
+msgstr ""
+
+#: aeroscope/data.py:605
+#, python-format
+msgid "Photo available for %s; downloading thumbnail"
+msgstr ""
+
+#: aeroscope/data.py:607
+#, python-format
+msgid "No compatible thumbnail for %s"
+msgstr ""
+
+#: aeroscope/data.py:609
+msgid "Planespotters rate limit reached; stopping further photo requests"
+msgstr ""
+
+#: aeroscope/data.py:612
+#, python-format
+msgid "Error fetching %s: %s"
+msgstr ""
+
+#: aeroscope/data.py:616
+msgid "Incomplete photo lookup: "
+msgstr ""
+
+#: aeroscope/data.py:617
+#, python-format
+msgid "No photos found on Planespotters for %s / %s (%s requests)"
+msgstr ""
+
+#: aeroscope/data.py:626
+msgid "Unauthorized photo domain"
+msgstr ""
+
+#: aeroscope/data.py:628
+#, python-format
+msgid "Downloading thumbnail from host %s"
+msgstr ""
+
+#: aeroscope/data.py:638
+msgid "Photo redirect to unauthorized domain"
+msgstr ""
+
+#: aeroscope/data.py:642
+#, python-format
+msgid "Thumbnail: HTTP %s, content-type=%s, %s bytes, source=%s"
+msgstr ""
+
+#: aeroscope/data.py:645
+#, python-brace-format
+msgid "Thumbnail content is not an image (Content-Type: {value0})"
+msgstr ""
+
+#: aeroscope/data.py:647
+msgid "Thumbnail exceeds the 1.5 MB limit"
+msgstr ""
+
+#: aeroscope/data.py:652
+#, python-format
+msgid "Thumbnail download failed: HTTP %s"
+msgstr ""
+
+#: aeroscope/data.py:653
+#, python-brace-format
+msgid "Thumbnail download refused: HTTP {value0}"
+msgstr ""
+
+#: aeroscope/data.py:655
+#, python-format
+msgid "Network error downloading thumbnail: %s"
+msgstr ""
+
+#: aeroscope/data.py:656
+#, python-brace-format
+msgid "Network error downloading thumbnail: {value0}"
+msgstr ""
+
+#: aeroscope/data.py:692
+msgid "Invalid airport ICAO"
+msgstr ""
+
+#: aeroscope/favorite_history.py:13
+msgid "Possibly in flight"
+msgstr ""
+
+#: aeroscope/favorite_history.py:14
+msgid "Detected on the ground"
+msgstr ""
+
+#: aeroscope/favorite_history.py:15
+msgid "Tracked; status undetermined"
+msgstr ""
+
+#: aeroscope/favorite_history.py:16
+msgid "Signal detected without position"
+msgstr ""
+
+#: aeroscope/favorite_history.py:17
+#: aeroscope/monitor_ui.py:506
+msgid "No recent signal"
+msgstr ""
+
+#: aeroscope/floating_widget.py:58
+msgid "SIGMET area covers this location"
+msgstr ""
+
+#: aeroscope/floating_widget.py:79
+#: aeroscope/monitor_ui.py:666
+#: aeroscope/ui.py:3356
+msgid "Center airport on map"
+msgstr ""
+
+#: aeroscope/floating_widget.py:80
+#: aeroscope/monitor_ui.py:667
+#: aeroscope/ui.py:3459
+msgid "Center weather station on map"
+msgstr ""
+
+#: aeroscope/floating_widget.py:220
+msgid "METAR unavailable."
+msgstr ""
+
+#: aeroscope/floating_widget.py:228
+#: aeroscope/monitor_ui.py:615
+#, python-brace-format
+msgid "Observed: {value0}"
+msgstr ""
+
+#: aeroscope/floating_widget.py:229
+#: aeroscope/ui.py:2908
+#: aeroscope/weather_ui.py:364
+msgid "Time not provided"
+msgstr ""
+
+#: aeroscope/floating_widget.py:231
+msgid "METAR update failed; displaying last observation."
+msgstr ""
+
+#: aeroscope/floating_widget.py:233
+#: aeroscope/monitor_ui.py:621
+#: aeroscope/ui.py:3080
+#: aeroscope/ui.py:3119
+msgid "Checking METAR…"
+msgstr ""
+
+#: aeroscope/floating_widget.py:235
+#: aeroscope/monitor_ui.py:623
+#: aeroscope/ui.py:3084
+msgid "No recent METAR available."
+msgstr ""
+
+#: aeroscope/floating_widget.py:237
+#, python-brace-format
+msgid "Checked: {value0} UTC"
+msgstr ""
+
+#: aeroscope/floating_widget.py:240
+msgid "Awaiting next NOAA update."
+msgstr ""
+
+#: aeroscope/floating_widget.py:255
+msgid "⚠ SIGMET covering this location"
+msgstr ""
+
+#: aeroscope/floating_widget.py:269
+#: aeroscope/monitor_ui.py:641
+#, python-brace-format
+msgid "+ {value0} more SIGMET advisories"
+msgstr ""
+
+#: aeroscope/floating_widget.py:271
+msgid "Horizontal area; phenomenon may be aloft or forecast."
+msgstr ""
+
+#: aeroscope/floating_widget.py:276
+#: aeroscope/monitor_ui.py:644
+msgid "SIGMET verification unavailable."
+msgstr ""
+
+#: aeroscope/floating_widget.py:278
+msgid "Checking SIGMET…"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:52
+msgid "Map and navigation"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:53
+#: aeroscope/mini_map.py:157
+#: aeroscope/ui.py:831
+msgid "Zoom in"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:54
+#: aeroscope/mini_map.py:158
+#: aeroscope/ui.py:832
+msgid "Zoom out"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:55
+msgid "Locate on map"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:56
+msgid "Find aircraft, airports or cities"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:57
+msgid "Full screen dashboard"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:57
+msgid "F11"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:59
+msgid "Layers and monitoring"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:60
+#: aeroscope/preferences.py:94
+#: aeroscope/ui.py:622
+msgid "Control tower mode"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:61
+#: aeroscope/preferences.py:98
+#: aeroscope/ui.py:623
+msgid "Rotating sweep"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:62
+msgid "METAR observations"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:63
+msgid "SIGMET advisories"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:64
+#: aeroscope/ui.py:4743
+msgid "Mini-map"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:65
+#: aeroscope/monitor_ui.py:150
+#: aeroscope/monitor_ui.py:466
+msgid "Favorites"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:66
+msgid "Visible aircraft"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:67
+#: aeroscope/monitor_ui.py:184
+#: aeroscope/monitor_ui.py:474
+msgid "Emergencies"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:69
+#: aeroscope/ui.py:655
+msgid "Application"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:70
+#: aeroscope/keyboard_shortcuts_window.py:16
+#: aeroscope/ui.py:651
+msgid "Keyboard shortcuts"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:70
+msgid "F1"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:71
+#: aeroscope/ui.py:650
+msgid "Preferences"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:72
+#: aeroscope/status_tray.py:63
+#: aeroscope/ui.py:654
+msgid "Quit AeroScope"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:73
+msgid "Exit full screen"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:73
+msgid "Esc"
+msgstr ""
+
+#: aeroscope/location_policy.py:32
+msgid "Location is disabled in GNOME settings."
+msgstr ""
+
+#: aeroscope/location_policy.py:37
+msgid "GeoClue is not installed or available on this system."
+msgstr ""
+
+#: aeroscope/metar_readable.py:22
+msgid "Visibility and cloud ceiling generally suitable for visual flight."
+msgstr ""
+
+#: aeroscope/metar_readable.py:23
+msgid "Some visibility or cloud-ceiling restrictions."
+msgstr ""
+
+#: aeroscope/metar_readable.py:24
+msgid "Reduced visibility or cloud ceiling."
+msgstr ""
+
+#: aeroscope/metar_readable.py:25
+msgid "Very low visibility or cloud ceiling."
+msgstr ""
+
+#: aeroscope/metar_readable.py:28
+msgid "No clouds reported"
+msgstr ""
+
+#: aeroscope/metar_readable.py:28
+msgid "No relevant clouds reported"
+msgstr ""
+
+#: aeroscope/metar_readable.py:29
+msgid "No significant clouds"
+msgstr ""
+
+#: aeroscope/metar_readable.py:29
+msgid "No clouds detected"
+msgstr ""
+
+#: aeroscope/metar_readable.py:30
+msgid "Few clouds"
+msgstr ""
+
+#: aeroscope/metar_readable.py:30
+msgid "Scattered clouds"
+msgstr ""
+
+#: aeroscope/metar_readable.py:31
+msgid "Mostly cloudy"
+msgstr ""
+
+#: aeroscope/metar_readable.py:31
+msgid "Overcast"
+msgstr ""
+
+#: aeroscope/metar_readable.py:32
+msgid "Obscured sky (vertical visibility)"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "north"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "northeast"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "east"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "southeast"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "south"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "southwest"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "west"
+msgstr ""
+
+#: aeroscope/metar_readable.py:34
+msgid "northwest"
+msgstr ""
+
+#: aeroscope/metar_readable.py:36
+msgid "freezing rain"
+msgstr ""
+
+#: aeroscope/metar_readable.py:36
+msgid "freezing drizzle"
+msgstr ""
+
+#: aeroscope/metar_readable.py:37
+msgid "rain showers"
+msgstr ""
+
+#: aeroscope/metar_readable.py:37
+msgid "snow showers"
+msgstr ""
+
+#: aeroscope/metar_readable.py:38
+msgid "thunderstorm with rain"
+msgstr ""
+
+#: aeroscope/metar_readable.py:38
+msgid "thunderstorm with snow"
+msgstr ""
+
+#: aeroscope/metar_readable.py:39
+msgid "thunderstorm"
+msgstr ""
+
+#: aeroscope/metar_readable.py:39
+msgid "rain"
+msgstr ""
+
+#: aeroscope/metar_readable.py:39
+msgid "drizzle"
+msgstr ""
+
+#: aeroscope/metar_readable.py:39
+msgid "snow"
+msgstr ""
+
+#: aeroscope/metar_readable.py:40
+msgid "mist"
+msgstr ""
+
+#: aeroscope/metar_readable.py:40
+msgid "fog"
+msgstr ""
+
+#: aeroscope/metar_readable.py:40
+msgid "haze"
+msgstr ""
+
+#: aeroscope/metar_readable.py:41
+msgid "smoke"
+msgstr ""
+
+#: aeroscope/metar_readable.py:41
+msgid "dust"
+msgstr ""
+
+#: aeroscope/metar_readable.py:41
+msgid "blowing sand"
+msgstr ""
+
+#: aeroscope/metar_readable.py:42
+msgid "hail"
+msgstr ""
+
+#: aeroscope/metar_readable.py:42
+msgid "small hail"
+msgstr ""
+
+#: aeroscope/metar_readable.py:42
+msgid "ice pellets"
+msgstr ""
+
+#: aeroscope/metar_readable.py:43
+msgid "strong gusts"
+msgstr ""
+
+#: aeroscope/metar_readable.py:43
+msgid "funnel cloud"
+msgstr ""
+
+#: aeroscope/metar_readable.py:101
+#, python-brace-format
+msgid "At least {value0:g} km"
+msgstr ""
+
+#: aeroscope/metar_readable.py:106
+#, python-brace-format
+msgid "More than {value0:.0f} km"
+msgstr ""
+
+#: aeroscope/metar_readable.py:127
+msgid "Calm wind"
+msgstr ""
+
+#: aeroscope/metar_readable.py:129
+msgid "Variable wind direction"
+msgstr ""
+
+#: aeroscope/metar_readable.py:133
+msgid "Wind (direction not reported)"
+msgstr ""
+
+#: aeroscope/metar_readable.py:136
+#, python-brace-format
+msgid "Wind from the {value0} ({value1:.0f}°)"
+msgstr ""
+
+#: aeroscope/metar_readable.py:137
+#, python-brace-format
+msgid ", {value0} km/h ({value1} knots)"
+msgstr ""
+
+#: aeroscope/metar_readable.py:140
+#, python-brace-format
+msgid "; gusting up to {value0} km/h"
+msgstr ""
+
+#: aeroscope/metar_readable.py:154
+#, python-brace-format
+msgid " at approximately {value0:,} m above the airport"
+msgstr ""
+
+#: aeroscope/metar_readable.py:164
+msgid "light"
+msgstr ""
+
+#: aeroscope/metar_readable.py:164
+msgid "heavy"
+msgstr ""
+
+#: aeroscope/metar_readable.py:172
+msgid " nearby"
+msgstr ""
+
+#: aeroscope/metar_readable.py:185
+msgid "Flight conditions not classified in this report."
+msgstr ""
+
+#: aeroscope/metar_readable.py:188
+msgid "Observed weather"
+msgstr ""
+
+#: aeroscope/metar_readable.py:190
+msgid "Temperature"
+msgstr ""
+
+#: aeroscope/metar_readable.py:192
+msgid "Dew point"
+msgstr ""
+
+#: aeroscope/metar_readable.py:194
+msgid "Wind"
+msgstr ""
+
+#: aeroscope/metar_readable.py:196
+msgid "Visibility"
+msgstr ""
+
+#: aeroscope/metar_readable.py:198
+msgid "Clouds"
+msgstr ""
+
+#: aeroscope/metar_readable.py:201
+msgid "Atmospheric pressure (QNH)"
+msgstr ""
+
+#: aeroscope/mini_map.py:25
+msgid "AeroScope · Mini-map"
+msgstr ""
+
+#: aeroscope/mini_map.py:63
+msgid "Mini-map options"
+msgstr ""
+
+#: aeroscope/mini_map.py:72
+#: aeroscope/mini_map.py:87
+msgid "Open main window"
+msgstr ""
+
+#: aeroscope/mini_map.py:78
+msgid "Hide mini-map"
+msgstr ""
+
+#: aeroscope/mini_map.py:91
+msgid "Always on top"
+msgstr ""
+
+#: aeroscope/mini_map.py:96
+msgid "How to enable always-on-top"
+msgstr ""
+
+#: aeroscope/mini_map.py:100
+msgid "Window stacking is controlled by the desktop environment."
+msgstr ""
+
+#: aeroscope/mini_map.py:166
+msgid "Center using system geolocation"
+msgstr ""
+
+#: aeroscope/mini_map.py:340
+msgid "Automatic PiP placement unavailable on this display backend."
+msgstr ""
+
+#: aeroscope/mini_map.py:358
+msgid "Request sent to X11 window manager (may be ignored)."
+msgstr ""
+
+#: aeroscope/mini_map.py:365
+msgid ""
+"On Wayland, applications cannot request a universal permission to stay above "
+"other windows. Use your desktop environment instead.\n"
+"\n"
+"GNOME: select the mini-map, press Alt+Space or right-click the title bar. If "
+"the menu offers “Always on Top” or “Always Above”, enable it. If the option "
+"is unavailable in your GNOME version, you may need a compatible GNOME Shell "
+"extension.\n"
+"\n"
+"KDE Plasma: select the mini-map and press Alt+F3 → More Actions → Keep Above "
+"Others. To make it permanent, select Configure Special Window Settings and "
+"enable “Keep Above”.\n"
+"\n"
+"Options and labels may vary by desktop version."
+msgstr ""
+
+#: aeroscope/mini_map.py:366
+msgid "How to keep the mini-map on top"
+msgstr ""
+
+#: aeroscope/mini_map.py:367
+msgid "Got it"
+msgstr ""
+
+#: aeroscope/monitor.py:23
+msgid "General emergency"
+msgstr ""
+
+#: aeroscope/monitor.py:23
+msgid "Radio failure"
+msgstr ""
+
+#: aeroscope/monitor.py:42
+msgid "The ICAO24 address must contain six hexadecimal digits."
+msgstr ""
+
+#: aeroscope/monitor.py:45
+msgid "Invalid registration (e.g. PT-MUJ, PR-ABC)."
+msgstr ""
+
+#: aeroscope/monitor.py:47
+msgid "Invalid identifier type."
+msgstr ""
+
+#: aeroscope/monitor.py:88
+#, python-brace-format
+msgid "The monitor supports up to {value0} aircraft, to protect the public API."
+msgstr ""
+
+#: aeroscope/monitor.py:189
+msgid "Invalid response."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:93
+msgid "Aircraft, airport, or METAR station…"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:98
+msgid "Add or search"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:120
+msgid "Search aircraft, airports and stations; 12-aircraft limit."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:128
+msgid "Search aircraft, airports or METAR stations to add to favorites"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:132
+msgid "Check favorites now"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:140
+msgid "Show/hide favorite observation history for this session"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:157
+msgid "Worldwide codes 7700, 7600 and 7500. They do not confirm MAYDAY."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:161
+msgid "Not checked yet."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:166
+msgid "Search worldwide codes now"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:174
+msgid "Show/hide session emergency history; these are not official timestamps"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:223
+msgid "Favorite aircraft detected in possible flight"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:224
+#, python-brace-format
+msgid "{value0} · {value1} · position received from ADSB.lol"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:246
+msgid "Warm-up: starting worldwide emergency check"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:267
+msgid "Warm-up: checking favorites not yet covered by the radar"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:295
+msgid "Aircraft"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:295
+#: aeroscope/ui.py:1366
+msgid "Airports"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:296
+msgid "METAR stations"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:305
+#: aeroscope/ui.py:3244
+msgid "Add to favorites"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:321
+msgid "Four-character ICAO code: press Enter to check the NOAA station."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:338
+msgid "This airport is already in favorites."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:346
+#: aeroscope/monitor_ui.py:443
+msgid "This station is already in favorites."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:349
+#: aeroscope/monitor_ui.py:378
+msgid "This station has no known location."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:359
+msgid "This aircraft is already in favorites."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:376
+msgid "Invalid station location"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:411
+msgid "Checking NOAA METAR station…"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:419
+msgid "Choose an airport, aircraft or station from the results."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:423
+msgid "Choose a result from the list."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:437
+#, python-brace-format
+msgid "Could not check NOAA station: {value0}"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:439
+msgid "No current NOAA METAR for this ICAO station."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:441
+msgid "NOAA did not provide this station location."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:458
+#, python-brace-format
+msgid "Could not save: {value0}"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:474
+msgid "● Emergencies"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:489
+msgid "No favorites yet. Star an aircraft, airport or METAR station on the map."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:505
+msgid "Currently tracked"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:505
+msgid "Detected, no recent position"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:506
+msgid "Could not verify"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:507
+msgid "Not checked yet"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:507
+msgid "Unknown status"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:523
+msgid "Show aircraft on map"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:528
+msgid "Remove favorite"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:537
+msgid "Favorite airports"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:544
+msgid "Favorite weather stations"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:552
+msgid "Favorite observation history"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:556
+msgid "No previous changes recorded during this session."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:572
+#: aeroscope/monitor_ui.py:752
+msgid "Detected: "
+msgstr ""
+
+#: aeroscope/monitor_ui.py:573
+msgid ""
+"\n"
+"Observed change: "
+msgstr ""
+
+#: aeroscope/monitor_ui.py:594
+#, python-brace-format
+msgid "ICAO station: {value0}"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:607
+msgid "METAR available; flight category not provided"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:609
+msgid "Flight category from the latest NOAA METAR"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:613
+msgid "Flight category unavailable"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:614
+msgid "time not provided"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:618
+msgid "Could not refresh METAR; showing the last available report."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:622
+#: aeroscope/ui.py:3082
+msgid "METAR temporarily unavailable."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:624
+msgid "Waiting for the first METAR check."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:649
+msgid "Show airport details"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:650
+msgid "Show weather station details"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:678
+#: aeroscope/ui.py:2947
+#: aeroscope/ui.py:3359
+msgid "Remove airport from favorites"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:679
+#: aeroscope/ui.py:2941
+#: aeroscope/ui.py:3462
+msgid "Remove station from favorites"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:697
+msgid "Incomplete lookup: some codes failed. Cannot guarantee absence of alerts."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:699
+msgid "No emergency transmissions in the latest check."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:719
+msgid " · no recent position"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:733
+msgid "Resolved alerts during monitoring"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:737
+msgid "No resolved alerts in this session yet."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:748
+#, python-brace-format
+msgid "{value0} · {value1} · no emergency signal"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:753
+msgid ""
+"\n"
+"No longer detected: "
+msgstr ""
+
+#: aeroscope/monitor_ui.py:785
+#: aeroscope/ui.py:2100
+msgid "API rate limit: waiting before next request."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:793
+msgid "Checking aircraft worldwide…"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:803
+msgid "Updated with live radar data."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:815
+#, python-format
+msgid "Favorite %s: %s"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:828
+#: aeroscope/monitor_ui.py:878
+#, python-brace-format
+msgid "API rate limit: retry after {value0}s."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:830
+#, python-brace-format
+msgid "Failed to check favorites: {value0}"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:847
+#, python-brace-format
+msgid "Checked at {value0} · Intervalo: {value1} min"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:857
+msgid "API rate limit: waiting before request."
+msgstr ""
+
+#: aeroscope/monitor_ui.py:865
+msgid "Checking worldwide codes 7700, 7600 and 7500…"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:880
+#, python-brace-format
+msgid "Worldwide lookup unavailable: {value0}"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:894
+#, python-brace-format
+msgid "Code {value0} · {value1}"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:895
+#, python-brace-format
+msgid "{value0} · transponder alert detected on the network"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:901
+#, python-brace-format
+msgid " · {value0} unavailable code(s)"
+msgstr ""
+
+#: aeroscope/monitor_ui.py:903
+#, python-brace-format
+msgid "{value0} aircraft · {value1}"
+msgstr ""
+
+#: aeroscope/pip_windowing.py:261
+#, python-format
+msgid "Mini-map: requested X11 position %s, monitor %s"
+msgstr ""
+
+#: aeroscope/playback.py:89
+msgid "Unknown metric"
+msgstr ""
+
+#: aeroscope/preferences.py:49
+msgid "Preferences — AeroScope"
+msgstr ""
+
+#: aeroscope/preferences.py:65
+msgid "Appearance"
+msgstr ""
+
+#: aeroscope/preferences.py:66
+msgid "Application appearance"
+msgstr ""
+
+#: aeroscope/preferences.py:68
+#: aeroscope/preferences.py:70
+msgid "Automatic (system)"
+msgstr ""
+
+#: aeroscope/preferences.py:68
+msgid "Light"
+msgstr ""
+
+#: aeroscope/preferences.py:68
+msgid "Dark"
+msgstr ""
+
+#: aeroscope/preferences.py:72
+msgid "Language"
+msgstr ""
+
+#: aeroscope/preferences.py:73
+msgid "Restart AeroScope to apply the selected language."
+msgstr ""
+
+#: aeroscope/preferences.py:76
+msgid "Theme"
+msgstr ""
+
+#: aeroscope/preferences.py:76
+msgid "Follows the desktop appearance setting or uses your choice"
+msgstr ""
+
+#: aeroscope/preferences.py:79
+msgid "Map"
+msgstr ""
+
+#: aeroscope/preferences.py:79
+msgid "Free providers with visible attribution"
+msgstr ""
+
+#: aeroscope/preferences.py:83
+msgid "Map provider"
+msgstr ""
+
+#: aeroscope/preferences.py:83
+msgid "No API key; subject to provider terms"
+msgstr ""
+
+#: aeroscope/preferences.py:86
+msgid "Show nearby airports"
+msgstr ""
+
+#: aeroscope/preferences.py:87
+msgid "Markers with names, codes and locations"
+msgstr ""
+
+#: aeroscope/preferences.py:89
+msgid "Map display"
+msgstr ""
+
+#: aeroscope/preferences.py:90
+msgid "These shortcuts are also in the main menu."
+msgstr ""
+
+#: aeroscope/preferences.py:95
+msgid "Shows distance rings around the radar center"
+msgstr ""
+
+#: aeroscope/preferences.py:96
+msgid "Selected aircraft clock"
+msgstr ""
+
+#: aeroscope/preferences.py:97
+msgid "12-hour ring relative to the aircraft heading, independent of tower mode"
+msgstr ""
+
+#: aeroscope/preferences.py:99
+msgid ""
+"In tower mode, reveals previously received positions as the sweep passes, "
+"without new requests"
+msgstr ""
+
+#: aeroscope/preferences.py:105
+#: aeroscope/ui.py:630
+msgid "Disabled"
+msgstr ""
+
+#: aeroscope/preferences.py:105
+#: aeroscope/ui.py:631
+msgid "Registration (ICAO24 if unavailable)"
+msgstr ""
+
+#: aeroscope/preferences.py:108
+msgid "Labels next to aircraft icons"
+msgstr ""
+
+#: aeroscope/preferences.py:109
+msgid "Shows a small fixed label below every aircraft, including in the mini-map"
+msgstr ""
+
+#: aeroscope/preferences.py:117
+msgid ""
+"Layers also available under View → Weather. Advisory data; not a substitute "
+"for official flight information."
+msgstr ""
+
+#: aeroscope/preferences.py:121
+msgid "Airport METAR reports · NOAA"
+msgstr ""
+
+#: aeroscope/preferences.py:122
+msgid "Nearby aviation weather observations, every 15 min."
+msgstr ""
+
+#: aeroscope/preferences.py:123
+#: aeroscope/ui.py:640
+msgid "SIGMET areas · NOAA"
+msgstr ""
+
+#: aeroscope/preferences.py:124
+msgid "Outlines of active aviation weather advisories, every 15 min."
+msgstr ""
+
+#: aeroscope/preferences.py:130
+msgid "Show SIGMET area fill"
+msgstr ""
+
+#: aeroscope/preferences.py:131
+#, python-format
+msgid "10% translucent fill; 18% for the selected area, and subtler in tower mode."
+msgstr ""
+
+#: aeroscope/preferences.py:132
+msgid "Use colors by SIGMET phenomenon"
+msgstr ""
+
+#: aeroscope/preferences.py:133
+msgid ""
+"Distinct outlines and symbols for thunderstorms, icing, turbulence and other "
+"phenomena."
+msgstr ""
+
+#: aeroscope/preferences.py:141
+msgid "Live tracking"
+msgstr ""
+
+#: aeroscope/preferences.py:142
+msgid "Actual ADSB.lol positions; optional visual animation between updates"
+msgstr ""
+
+#: aeroscope/preferences.py:145
+msgid "Regional refresh — map open"
+msgstr ""
+
+#: aeroscope/preferences.py:146
+msgid ""
+"Main window or mini-map visible. Default: 10 s; includes 2, 4, 8 and 10 "
+"minutes."
+msgstr ""
+
+#: aeroscope/preferences.py:150
+msgid "Regional refresh — tray only"
+msgstr ""
+
+#: aeroscope/preferences.py:151
+msgid ""
+"Last viewed area. Disabled mode keeps only favorites and emergencies. "
+"Default: 10 s."
+msgstr ""
+
+#: aeroscope/preferences.py:155
+msgid "Show startup preparation"
+msgstr ""
+
+#: aeroscope/preferences.py:156
+msgid "Dims the window and waits for up to three initial updates, with a skip option"
+msgstr ""
+
+#: aeroscope/preferences.py:159
+msgid "Animate aircraft movement"
+msgstr ""
+
+#: aeroscope/preferences.py:160
+msgid "Smooth movement towards the confirmed position until the next update"
+msgstr ""
+
+#: aeroscope/preferences.py:163
+msgid "Subtle altitude perspective"
+msgstr ""
+
+#: aeroscope/preferences.py:164
+msgid "Cruising aircraft appear slightly larger than aircraft on the ground"
+msgstr ""
+
+#: aeroscope/preferences.py:168
+msgid "Location"
+msgstr ""
+
+#: aeroscope/preferences.py:169
+msgid ""
+"AeroScope uses GeoClue when available on GNOME, KDE, XFCE and other desktops."
+" If system location is unavailable, IP lookup is an approximate and optional "
+"alternative."
+msgstr ""
+
+#: aeroscope/preferences.py:171
+#: aeroscope/ui.py:649
+#: aeroscope/ui.py:4356
+msgid "Approximate IP location"
+msgstr ""
+
+#: aeroscope/preferences.py:172
+msgid "Queries only on request; IP explanation appears only on first authorization"
+msgstr ""
+
+#: aeroscope/preferences.py:173
+msgid "Find my location"
+msgstr ""
+
+#: aeroscope/preferences.py:181
+msgid "Remember IP location authorization"
+msgstr ""
+
+#: aeroscope/preferences.py:182
+msgid ""
+"You may revoke previously granted permission; the next use will ask for "
+"confirmation"
+msgstr ""
+
+#: aeroscope/preferences.py:186
+msgid "Suggest IP location when necessary"
+msgstr ""
+
+#: aeroscope/preferences.py:187
+msgid ""
+"If system location fails, offers an alternative without automatically "
+"checking the IP address"
+msgstr ""
+
+#: aeroscope/preferences.py:190
+msgid "Geographic coverage"
+msgstr ""
+
+#: aeroscope/preferences.py:191
+msgid "Fixed 250 NM radius; reuses the area as the map moves."
+msgstr ""
+
+#: aeroscope/preferences.py:192
+msgid "Kilometers per hour (km/h)"
+msgstr ""
+
+#: aeroscope/preferences.py:192
+msgid "Knots (kt)"
+msgstr ""
+
+#: aeroscope/preferences.py:192
+msgid "Miles per hour (mph)"
+msgstr ""
+
+#: aeroscope/preferences.py:194
+msgid "Primary speed unit"
+msgstr ""
+
+#: aeroscope/preferences.py:194
+msgid "All three units appear in the summary"
+msgstr ""
+
+#: aeroscope/preferences.py:197
+msgid "Hover summary"
+msgstr ""
+
+#: aeroscope/preferences.py:198
+msgid "Shows summary information about an aircraft"
+msgstr ""
+
+#: aeroscope/preferences.py:200
+msgid "Aircraft photos"
+msgstr ""
+
+#: aeroscope/preferences.py:201
+msgid "Loads Planespotters thumbnails only when selected"
+msgstr ""
+
+#: aeroscope/preferences.py:203
+msgid "Query flight history"
+msgstr ""
+
+#: aeroscope/preferences.py:204
+msgid "Queries ADSB.aero only when an aircraft is selected"
+msgstr ""
+
+#: aeroscope/preferences.py:210
+#: aeroscope/ui.py:618
+msgid "Favorite aircraft watchlist"
+msgstr ""
+
+#: aeroscope/preferences.py:211
+msgid "Worldwide checks while AeroScope is open or running in the background."
+msgstr ""
+
+#: aeroscope/preferences.py:214
+msgid "Automatically refresh favorites"
+msgstr ""
+
+#: aeroscope/preferences.py:215
+msgid "Checks favorite registrations even when the Visible tab is open"
+msgstr ""
+
+#: aeroscope/preferences.py:219
+msgid "Favorite check interval"
+msgstr ""
+
+#: aeroscope/preferences.py:219
+msgid "Each favorite requires a request; keep API rate limits in mind"
+msgstr ""
+
+#: aeroscope/preferences.py:220
+#: aeroscope/preferences.py:253
+msgid "1 minute"
+msgstr ""
+
+#: aeroscope/preferences.py:220
+#: aeroscope/preferences.py:253
+msgid "2 minutes"
+msgstr ""
+
+#: aeroscope/preferences.py:220
+#: aeroscope/preferences.py:253
+msgid "5 minutes"
+msgstr ""
+
+#: aeroscope/preferences.py:220
+#: aeroscope/preferences.py:253
+msgid "10 minutes"
+msgstr ""
+
+#: aeroscope/preferences.py:220
+#: aeroscope/preferences.py:253
+msgid "15 minutes"
+msgstr ""
+
+#: aeroscope/preferences.py:224
+msgid "Notify when detected in flight again"
+msgstr ""
+
+#: aeroscope/preferences.py:225
+msgid ""
+"Requires two previous checks without a signal; flight inferred from speed and"
+" altitude, not confirmed"
+msgstr ""
+
+#: aeroscope/preferences.py:229
+msgid "Favorite airport and station METARs"
+msgstr ""
+
+#: aeroscope/preferences.py:230
+msgid ""
+"Checks saved locations from NOAA every 15 minutes, including in the "
+"background."
+msgstr ""
+
+#: aeroscope/preferences.py:233
+msgid "Monitor favorite METARs automatically"
+msgstr ""
+
+#: aeroscope/preferences.py:234
+msgid "Batch checks, including saved locations outside the current map."
+msgstr ""
+
+#: aeroscope/preferences.py:238
+msgid "Notify when a METAR bulletin changes"
+msgstr ""
+
+#: aeroscope/preferences.py:239
+msgid ""
+"The first valid observation sets a baseline; repeated or missing reports "
+"never alert."
+msgstr ""
+
+#: aeroscope/preferences.py:244
+msgid "Worldwide emergencies"
+msgstr ""
+
+#: aeroscope/preferences.py:245
+msgid "Transponder codes 7700, 7600 and 7500. They do not prove a MAYDAY call."
+msgstr ""
+
+#: aeroscope/preferences.py:248
+msgid "Automatically monitor emergencies"
+msgstr ""
+
+#: aeroscope/preferences.py:249
+msgid ""
+"Enabled by default; uses three worldwide requests per update while the app is"
+" open"
+msgstr ""
+
+#: aeroscope/preferences.py:252
+msgid "Emergency check interval"
+msgstr ""
+
+#: aeroscope/preferences.py:252
+msgid "The API uses dynamic rate limits; HTTP 429 errors pause further requests"
+msgstr ""
+
+#: aeroscope/preferences.py:257
+msgid "New emergency notifications"
+msgstr ""
+
+#: aeroscope/preferences.py:258
+msgid ""
+"Linux desktop notifications when a new code appears; the initial request does"
+" not trigger an alert"
+msgstr ""
+
+#: aeroscope/preferences.py:261
+msgid "Audible alarm"
+msgstr ""
+
+#: aeroscope/preferences.py:262
+msgid ""
+"Audible alert for new emergencies, respecting system sound and Do Not Disturb"
+" settings"
+msgstr ""
+
+#: aeroscope/preferences.py:266
+msgid "Window and background"
+msgstr ""
+
+#: aeroscope/preferences.py:267
+msgid ""
+"AeroScope continues requests and notifications while hidden. The system tray "
+"icon depends on desktop support."
+msgstr ""
+
+#: aeroscope/preferences.py:270
+msgid "Start automatically at login"
+msgstr ""
+
+#: aeroscope/preferences.py:271
+msgid ""
+"Start in tray without opening the map or running regional requests until "
+"first use. Favorites and emergencies remain monitored; requires a compatible "
+"tray icon."
+msgstr ""
+
+#: aeroscope/preferences.py:275
+msgid "Continue monitoring when window closes"
+msgstr ""
+
+#: aeroscope/preferences.py:276
+msgid ""
+"Keeps the app running in the background; the tray icon menu has a Quit "
+"option. If no icon is available, a confirmation will appear."
+msgstr ""
+
+#: aeroscope/preferences.py:279
+msgid "Mini-map always on top (when supported)"
+msgstr ""
+
+#: aeroscope/preferences.py:280
+msgid ""
+"Enabled by default: requests always-on-top in X11. On GNOME/Wayland, use your"
+" window manager settings to keep the window above others."
+msgstr ""
+
+#: aeroscope/preferences.py:284
+msgid "Show mini-map when closing"
+msgstr ""
+
+#: aeroscope/preferences.py:285
+msgid ""
+"Shows only the map and aircraft, with controls to expand or return to the "
+"main window. Stacking above other windows depends on the compositor."
+msgstr ""
+
+#: aeroscope/preferences.py:289
+msgid "Storage"
+msgstr ""
+
+#: aeroscope/preferences.py:290
+msgid "Local data"
+msgstr ""
+
+#: aeroscope/preferences.py:291
+msgid "Tracks and history are kept only in memory during the session."
+msgstr ""
+
+#: aeroscope/preferences.py:293
+msgid "AeroScope temporary files"
+msgstr ""
+
+#: aeroscope/preferences.py:296
+msgid "Clear cache"
+msgstr ""
+
+#: aeroscope/preferences.py:301
+msgid "Live track"
+msgstr ""
+
+#: aeroscope/preferences.py:302
+msgid "Discards all positions recorded during this session"
+msgstr ""
+
+#: aeroscope/preferences.py:303
+msgid "Clear tracks"
+msgstr ""
+
+#: aeroscope/preferences.py:308
+msgid "Map cache"
+msgstr ""
+
+#: aeroscope/preferences.py:309
+msgid ""
+"Libshumate maintains its own tile cache according to each provider's rules. "
+"AeroScope does not delete caches shared with other GNOME applications."
+msgstr ""
+
+#: aeroscope/preferences.py:313
+msgid "Information"
+msgstr ""
+
+#: aeroscope/preferences.py:314
+msgid "About the data"
+msgstr ""
+
+#: aeroscope/preferences.py:315
+msgid ""
+"ADSB.lol: current positions. ADSB.aero: archived history. Planespotters.net: "
+"contributor photos. OpenStreetMap/OpenTopoMap: maps. This application is not "
+"intended for aeronautical navigation."
+msgstr ""
+
+#: aeroscope/preferences.py:319
+#, python-brace-format
+msgid "{value0:.2f} MB of temporary metadata"
+msgstr ""
+
+#: aeroscope/regional_poll.py:11
+msgid "Disabled — favorites and emergencies only"
+msgstr ""
+
+#: aeroscope/regional_poll.py:14
+#, python-brace-format
+msgid "{n} minute"
+msgid_plural "{n} minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: aeroscope/regional_poll.py:15
+#, python-brace-format
+msgid "{n} second"
+msgid_plural "{n} seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: aeroscope/search_suggestions.py:125
+#, python-brace-format
+msgid "{value0} / {value1} · Airport"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:26
+#: aeroscope/sigmet_style.py:32
+msgid "Thunderstorms"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:26
+msgid "Thunderstorms with lightning that may include turbulence and heavy rain."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:27
+#: aeroscope/sigmet_style.py:33
+msgid "Turbulence"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:27
+msgid "Irregular air movements that may affect flight safety and comfort."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:28
+#: aeroscope/sigmet_style.py:34
+msgid "Icing"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:28
+msgid "Potential for significant ice formation or accumulation on an aircraft."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:29
+#: aeroscope/sigmet_style.py:35
+msgid "Volcanic ash"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:29
+msgid ""
+"Volcanic ash cloud, potentially dangerous to aircraft engines and other "
+"systems."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:30
+#: aeroscope/sigmet_style.py:36
+msgid "Tropical cyclone"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:30
+msgid ""
+"Intense tropical system with strong winds and potentially dangerous weather "
+"conditions."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:31
+#: aeroscope/sigmet_style.py:37
+msgid "Mountain waves"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:31
+msgid "Terrain-generated air currents that can cause severe turbulence."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:32
+#: aeroscope/sigmet_style.py:38
+msgid "Dust storm"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:32
+msgid "Airborne dust that may impair visibility and flight operations."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:33
+#: aeroscope/sigmet_style.py:39
+msgid "Sandstorm"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:33
+msgid "Windblown sand that may impair visibility and flight operations."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:34
+#: aeroscope/sigmet_style.py:40
+msgid "Radioactive cloud"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:34
+msgid "Radioactive cloud warning that may affect the safety of flight operations."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:93
+msgid ""
+"This area has an aviation weather advisory. The phenomenon could not be "
+"reliably identified from the received data."
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:99
+msgid "obscured by clouds"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:99
+msgid "embedded in other clouds"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:100
+msgid "frequent"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:100
+msgid "in a squall line"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:101
+msgid "with hail"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:105
+msgid "Characteristics"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:107
+msgid "Intensity"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:107
+msgid "Severe"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:109
+msgid "Reported cause"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:109
+msgid "Freezing rain"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:112
+#: aeroscope/sigmet_readable.py:114
+#: aeroscope/sigmet_readable.py:116
+msgid "Information type"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:112
+msgid "Observed and forecast phenomenon"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:114
+msgid "Observed phenomenon"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:116
+msgid "Forecast phenomenon"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:119
+msgid "Issued"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:120
+#: aeroscope/ui.py:2996
+#: aeroscope/ui.py:3050
+msgid "Start of validity"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:121
+#: aeroscope/ui.py:2996
+#: aeroscope/ui.py:3050
+msgid "End of validity"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:128
+msgid "Reported top"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:128
+#, python-brace-format
+msgid "FL{value0} (flight level, pressure altitude)"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:131
+msgid "Forecast movement"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:131
+#, python-brace-format
+msgid "Towards {value0}, cerca de {value1} km/h"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:133
+msgid "Movement"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:133
+msgid "Stationary, according to bulletin"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:135
+#: aeroscope/sigmet_readable.py:137
+#: aeroscope/sigmet_readable.py:139
+msgid "Trend"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:135
+msgid "Intensifying"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:137
+msgid "Weakening"
+msgstr ""
+
+#: aeroscope/sigmet_readable.py:139
+msgid "No reported change"
+msgstr ""
+
+#: aeroscope/status_tray.py:60
+msgid "Open AeroScope"
+msgstr ""
+
+#: aeroscope/status_tray.py:61
+#: aeroscope/ui.py:645
+msgid "Show mini-map"
+msgstr ""
+
+#: aeroscope/status_tray.py:83
+#, python-format
+msgid "System tray unavailable: %s"
+msgstr ""
+
+#: aeroscope/status_tray.py:105
+#, python-format
+msgid "StatusNotifier icon registered with desktop (%s)"
+msgstr ""
+
+#: aeroscope/status_tray.py:107
+#, python-format
+msgid "Could not create system tray: %s"
+msgstr ""
+
+#: aeroscope/status_tray.py:137
+msgid "AeroScope · Radar running"
+msgstr ""
+
+#: aeroscope/ui.py:80
+#: aeroscope/ui.py:89
+msgid "Not available"
+msgstr ""
+
+#: aeroscope/ui.py:90
+#, python-brace-format
+msgid "{value0} · {value1} knots · {value2} km/h · {value3} mph"
+msgstr ""
+
+#: aeroscope/ui.py:193
+#, python-brace-format
+msgid ""
+"{value0} · {value1}\n"
+"Registration: {value2}\n"
+"Altitude: {value3} · Velocidade: {value4}\n"
+"Rumo: {value5}° · Position: {value6:.3f}, {value7:.3f}{value8}\n"
+"Clique para ver os detalhes"
+msgstr ""
+
+#: aeroscope/ui.py:322
+msgid "Last viewed area"
+msgstr ""
+
+#: aeroscope/ui.py:323
+msgid "Divinópolis, MG · initial position"
+msgstr ""
+
+#: aeroscope/ui.py:587
+#, python-format
+msgid "Map could not be saved: %s"
+msgstr ""
+
+#: aeroscope/ui.py:609
+msgid "Connecting to API…"
+msgstr ""
+
+#: aeroscope/ui.py:613
+msgid "Refresh aircraft"
+msgstr ""
+
+#: aeroscope/ui.py:619
+msgid "Global emergencies"
+msgstr ""
+
+#: aeroscope/ui.py:620
+msgid "Monitoring"
+msgstr ""
+
+#: aeroscope/ui.py:624
+msgid "Aircraft clock"
+msgstr ""
+
+#: aeroscope/ui.py:632
+msgid "ICAO24 only"
+msgstr ""
+
+#: aeroscope/ui.py:637
+msgid "Aircraft identification"
+msgstr ""
+
+#: aeroscope/ui.py:639
+msgid "Airport METAR · NOAA"
+msgstr ""
+
+#: aeroscope/ui.py:641
+msgid "Weather"
+msgstr ""
+
+#: aeroscope/ui.py:642
+msgid "View"
+msgstr ""
+
+#: aeroscope/ui.py:646
+msgid "Hide and continue monitoring"
+msgstr ""
+
+#: aeroscope/ui.py:647
+msgid "Window"
+msgstr ""
+
+#: aeroscope/ui.py:652
+msgid "Support map providers"
+msgstr ""
+
+#: aeroscope/ui.py:653
+msgid "About AeroScope"
+msgstr ""
+
+#: aeroscope/ui.py:656
+msgid "Application menu"
+msgstr ""
+
+#: aeroscope/ui.py:692
+#: aeroscope/ui.py:705
+msgid "Search"
+msgstr ""
+
+#: aeroscope/ui.py:696
+msgid "Flight, airport or city…"
+msgstr ""
+
+#: aeroscope/ui.py:698
+msgid "Aircraft, airport and city suggestions. Use ↑ ↓ and Enter."
+msgstr ""
+
+#: aeroscope/ui.py:734
+msgid "Automatic coverage of visible area"
+msgstr ""
+
+#: aeroscope/ui.py:778
+msgid "Visible (0)"
+msgstr ""
+
+#: aeroscope/ui.py:838
+msgid "Center using location (GeoClue)"
+msgstr ""
+
+#: aeroscope/ui.py:855
+msgid "Exit full screen (F11 or Esc)"
+msgstr ""
+
+#: aeroscope/ui.py:924
+msgid "Demo · simulated positions"
+msgstr ""
+
+#: aeroscope/ui.py:943
+msgid "Archived flight"
+msgstr ""
+
+#: aeroscope/ui.py:944
+msgid "ADSB.aero · flight history"
+msgstr ""
+
+#: aeroscope/ui.py:952
+msgid "Show or hide altitude and speed chart"
+msgstr ""
+
+#: aeroscope/ui.py:956
+msgid "Center historical aircraft on map"
+msgstr ""
+
+#: aeroscope/ui.py:960
+msgid "Fit entire historical trajectory"
+msgstr ""
+
+#: aeroscope/ui.py:964
+msgid "Close playback and return to live radar"
+msgstr ""
+
+#: aeroscope/ui.py:973
+msgid "Drag to change the playback time"
+msgstr ""
+
+#: aeroscope/ui.py:978
+msgid "Return to start of flight"
+msgstr ""
+
+#: aeroscope/ui.py:982
+msgid "Skip back 30 seconds of flight time"
+msgstr ""
+
+#: aeroscope/ui.py:990
+msgid "Skip forward 30 seconds of flight time"
+msgstr ""
+
+#: aeroscope/ui.py:997
+#: aeroscope/ui.py:3182
+msgid "Speed"
+msgstr ""
+
+#: aeroscope/ui.py:999
+msgid "Flight time multiplier"
+msgstr ""
+
+#: aeroscope/ui.py:1002
+msgid "Hide live aircraft"
+msgstr ""
+
+#: aeroscope/ui.py:1003
+msgid "Hide only current aircraft markers"
+msgstr ""
+
+#: aeroscope/ui.py:1008
+msgid "Altitude —   ·   Speed —   ·   Observed distance —"
+msgstr ""
+
+#: aeroscope/ui.py:1020
+msgid "Flight chart"
+msgstr ""
+
+#: aeroscope/ui.py:1021
+msgid "Altitude · blue"
+msgstr ""
+
+#: aeroscope/ui.py:1025
+msgid "Speed · orange"
+msgstr ""
+
+#: aeroscope/ui.py:1029
+msgid "Horizontal axis"
+msgstr ""
+
+#: aeroscope/ui.py:1030
+msgid "UTC time"
+msgstr ""
+
+#: aeroscope/ui.py:1030
+msgid "Elapsed time"
+msgstr ""
+
+#: aeroscope/ui.py:1030
+msgid "Distance"
+msgstr ""
+
+#: aeroscope/ui.py:1164
+#, python-brace-format
+msgid "{value0:,.0f} feet"
+msgstr ""
+
+#: aeroscope/ui.py:1164
+#: aeroscope/ui.py:1165
+msgid "unavailable"
+msgstr ""
+
+#: aeroscope/ui.py:1166
+#, python-brace-format
+msgid ""
+"Altitude {value0}   ·   Velocidade {value1}   ·   Observed distance "
+"{value2:.1f} km"
+msgstr ""
+
+#: aeroscope/ui.py:1169
+msgid ""
+"No ADS-B coverage during this interval: historical position held at last "
+"recorded point."
+msgstr ""
+
+#: aeroscope/ui.py:1195
+msgid "Live radar resumed"
+msgstr ""
+
+#: aeroscope/ui.py:1268
+msgid "Search history by callsign, registration or ICAO24 address."
+msgstr ""
+
+#: aeroscope/ui.py:1271
+msgid "The historical archive requires a real internet connection."
+msgstr ""
+
+#: aeroscope/ui.py:1292
+#, python-format
+msgid "Search failed for %s: %s"
+msgstr ""
+
+#: aeroscope/ui.py:1309
+msgid "Archived flight not found in this search."
+msgstr ""
+
+#: aeroscope/ui.py:1313
+msgid "Historical record has no valid ICAO24 identifier."
+msgstr ""
+
+#: aeroscope/ui.py:1361
+msgid "Search archived flights"
+msgstr ""
+
+#: aeroscope/ui.py:1362
+msgid "ADSB.aero · up to 30 days · on demand"
+msgstr ""
+
+#: aeroscope/ui.py:1363
+msgid "Live aircraft"
+msgstr ""
+
+#: aeroscope/ui.py:1364
+#: aeroscope/ui.py:1403
+#: aeroscope/ui.py:1406
+#: aeroscope/ui.py:1409
+msgid "Flight history"
+msgstr ""
+
+#: aeroscope/ui.py:1365
+msgid "ADSB.aero archive"
+msgstr ""
+
+#: aeroscope/ui.py:1367
+#: aeroscope/ui.py:1400
+msgid "Cities"
+msgstr ""
+
+#: aeroscope/ui.py:1401
+msgid "Searching cities…"
+msgstr ""
+
+#: aeroscope/ui.py:1404
+msgid "Checking archived records…"
+msgstr ""
+
+#: aeroscope/ui.py:1407
+msgid "History request failed: "
+msgstr ""
+
+#: aeroscope/ui.py:1410
+msgid "No records in the recently checked pages (up to 30 days)."
+msgstr ""
+
+#: aeroscope/ui.py:1412
+msgid "No local suggestions. Press Enter to search."
+msgstr ""
+
+#: aeroscope/ui.py:1874
+msgid "Could not configure startup at login"
+msgstr ""
+
+#: aeroscope/ui.py:1983
+msgid "Preparing radar"
+msgstr ""
+
+#: aeroscope/ui.py:1997
+msgid "Receiving the first positions to start aircraft animation…"
+msgstr ""
+
+#: aeroscope/ui.py:2001
+#: aeroscope/ui.py:2033
+msgid "Waiting for first request · 0 of 3"
+msgstr ""
+
+#: aeroscope/ui.py:2007
+msgid "Show map now"
+msgstr ""
+
+#: aeroscope/ui.py:2034
+msgid "First position received · 1 of 3"
+msgstr ""
+
+#: aeroscope/ui.py:2035
+msgid "Warming up radar and aircraft · 2 of 3"
+msgstr ""
+
+#: aeroscope/ui.py:2036
+msgid "Radar ready · 3 of 3"
+msgstr ""
+
+#: aeroscope/ui.py:2093
+msgid "250 NM coverage · cached area"
+msgstr ""
+
+#: aeroscope/ui.py:2106
+msgid "New area · waiting for rate limit…"
+msgstr ""
+
+#: aeroscope/ui.py:2189
+#: aeroscope/ui.py:4327
+#, python-brace-format
+msgid "Aircraft {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:2274
+msgid "Temporary data cleared. GNOME map cache preserved."
+msgstr ""
+
+#: aeroscope/ui.py:2281
+msgid "Session tracks cleared."
+msgstr ""
+
+#: aeroscope/ui.py:2432
+msgid "Demo"
+msgstr ""
+
+#: aeroscope/ui.py:2468
+msgid "ADSB.lol rate limit: updates temporarily paused."
+msgstr ""
+
+#: aeroscope/ui.py:2474
+#, python-brace-format
+msgid "New request waiting for minimum interval ({value0:g} s)."
+msgstr ""
+
+#: aeroscope/ui.py:2500
+msgid "250 NM radius · 1 request"
+msgstr ""
+
+#: aeroscope/ui.py:2503
+msgid "Updating aircraft (250 NM)…"
+msgstr ""
+
+#: aeroscope/ui.py:2531
+#, python-brace-format
+msgid "ADSB.lol: HTTP 429 rate limit; paused for {value0} seconds."
+msgstr ""
+
+#: aeroscope/ui.py:2536
+#, python-brace-format
+msgid "Refresh failed: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:2548
+#, python-format
+msgid ""
+"Response in %.2fs; recent average %.2fs; next request in %.1fs; animation "
+"%.2fs"
+msgstr ""
+
+#: aeroscope/ui.py:2564
+#, python-brace-format
+msgid "{value0} visible · {value1} "
+msgstr ""
+
+#: aeroscope/ui.py:2788
+#, python-brace-format
+msgid "Visible ({value0})"
+msgstr ""
+
+#: aeroscope/ui.py:2791
+msgid "No aircraft with a valid position in this area."
+msgstr ""
+
+#: aeroscope/ui.py:2833
+msgid "Favorite aircraft"
+msgstr ""
+
+#: aeroscope/ui.py:2867
+msgid "Aircraft is no longer in this area."
+msgstr ""
+
+#: aeroscope/ui.py:2900
+msgid "In plain language"
+msgstr ""
+
+#: aeroscope/ui.py:2906
+msgid "This report does not contain enough data to describe the weather."
+msgstr ""
+
+#: aeroscope/ui.py:2908
+msgid "Observed"
+msgstr ""
+
+#: aeroscope/ui.py:2909
+msgid "View original METAR (technical code)"
+msgstr ""
+
+#: aeroscope/ui.py:2912
+msgid "Original code unavailable."
+msgstr ""
+
+#: aeroscope/ui.py:2915
+msgid ""
+"Source: NOAA Aviation Weather Center. Weather observation, not a forecast. Do"
+" not use alone for flight decisions."
+msgstr ""
+
+#: aeroscope/ui.py:2935
+#, python-brace-format
+msgid "Center {value0} on map"
+msgstr ""
+
+#: aeroscope/ui.py:2941
+#: aeroscope/ui.py:3462
+msgid "Add station to favorites"
+msgstr ""
+
+#: aeroscope/ui.py:2947
+#: aeroscope/ui.py:3359
+msgid "Add airport to favorites"
+msgstr ""
+
+#: aeroscope/ui.py:2951
+#, python-brace-format
+msgid "Close details for {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:2964
+msgid "SIGMET advisories · NOAA"
+msgstr ""
+
+#: aeroscope/ui.py:2968
+msgid "Checking SIGMET coverage…"
+msgstr ""
+
+#: aeroscope/ui.py:2972
+msgid "SIGMET lookup unavailable; coverage cannot be confirmed."
+msgstr ""
+
+#: aeroscope/ui.py:2975
+msgid "Position unavailable for SIGMET lookup."
+msgstr ""
+
+#: aeroscope/ui.py:2979
+msgid "No matching active SIGMET was returned for this location."
+msgstr ""
+
+#: aeroscope/ui.py:2982
+msgid ""
+"A SIGMET area covers this location horizontally. The reported phenomenon may "
+"be aloft or forecast, not necessarily occurring at the airport."
+msgstr ""
+
+#: aeroscope/ui.py:2998
+#: aeroscope/ui.py:3055
+msgid "View original SIGMET (technical bulletin)"
+msgstr ""
+
+#: aeroscope/ui.py:3000
+#: aeroscope/ui.py:3058
+msgid "Original bulletin not provided by NOAA."
+msgstr ""
+
+#: aeroscope/ui.py:3007
+#, python-brace-format
+msgid "Plus {value0} additional SIGMET advisories."
+msgstr ""
+
+#: aeroscope/ui.py:3010
+msgid ""
+"Advisory coverage is approximate and does not replace official preflight "
+"briefings."
+msgstr ""
+
+#: aeroscope/ui.py:3038
+msgid "Close SIGMET advisory"
+msgstr ""
+
+#: aeroscope/ui.py:3043
+msgid "Aviation weather advisory · NOAA"
+msgstr ""
+
+#: aeroscope/ui.py:3053
+msgid ""
+"The drawn area is approximate. A SIGMET describes observed or forecast "
+"conditions that may affect flight operations."
+msgstr ""
+
+#: aeroscope/ui.py:3062
+msgid ""
+"Source: NOAA Aviation Weather Center. Advisory information; not a substitute "
+"for official preflight briefings."
+msgstr ""
+
+#: aeroscope/ui.py:3068
+msgid "Weather station · "
+msgstr ""
+
+#: aeroscope/ui.py:3069
+msgid "station"
+msgstr ""
+
+#: aeroscope/ui.py:3071
+msgid "METAR observation · NOAA"
+msgstr ""
+
+#: aeroscope/ui.py:3072
+msgid "ICAO station"
+msgstr ""
+
+#: aeroscope/ui.py:3073
+#: aeroscope/ui.py:3114
+#: aeroscope/ui.py:3185
+msgid "Position"
+msgstr ""
+
+#: aeroscope/ui.py:3096
+#: aeroscope/ui.py:3171
+msgid "Close details"
+msgstr ""
+
+#: aeroscope/ui.py:3099
+msgid "ADSB.aero records; these are not live positions."
+msgstr ""
+
+#: aeroscope/ui.py:3112
+msgid "airport"
+msgstr ""
+
+#: aeroscope/ui.py:3113
+msgid "Code"
+msgstr ""
+
+#: aeroscope/ui.py:3121
+msgid "METAR unavailable: request failed."
+msgstr ""
+
+#: aeroscope/ui.py:3125
+msgid "No recent METAR available for this airport."
+msgstr ""
+
+#: aeroscope/ui.py:3128
+msgid "METAR unavailable for this code."
+msgstr ""
+
+#: aeroscope/ui.py:3130
+msgid "View arrivals and departures"
+msgstr ""
+
+#: aeroscope/ui.py:3132
+msgid "Open the airport's public page on Flightradar24"
+msgstr ""
+
+#: aeroscope/ui.py:3137
+msgid "Flight information provided by Flightradar24 on an external page."
+msgstr ""
+
+#: aeroscope/ui.py:3140
+msgid "Aircraft details"
+msgstr ""
+
+#: aeroscope/ui.py:3141
+msgid "Select an aircraft on the map or in the list."
+msgstr ""
+
+#: aeroscope/ui.py:3167
+msgid "Remove from favorites"
+msgstr ""
+
+#: aeroscope/ui.py:3167
+msgid "Add to watchlist"
+msgstr ""
+
+#: aeroscope/ui.py:3177
+msgid "Last position from worldwide emergency check; waiting for regional radar."
+msgstr ""
+
+#: aeroscope/ui.py:3180
+msgid "Category"
+msgstr ""
+
+#: aeroscope/ui.py:3184
+msgid "Heading"
+msgstr ""
+
+#: aeroscope/ui.py:3189
+msgid "Transmitted alert"
+msgstr ""
+
+#: aeroscope/ui.py:3191
+msgid "Track from this session"
+msgstr ""
+
+#: aeroscope/ui.py:3191
+#, python-brace-format
+msgid "{value0} positions"
+msgstr ""
+
+#: aeroscope/ui.py:3192
+msgid ""
+"Green track: session · blue: historical archive · dashed amber: estimated "
+"route."
+msgstr ""
+
+#: aeroscope/ui.py:3244
+msgid "Unfavorite"
+msgstr ""
+
+#: aeroscope/ui.py:3247
+#: aeroscope/ui.py:3362
+#: aeroscope/ui.py:3465
+msgid "Remove floating panel"
+msgstr ""
+
+#: aeroscope/ui.py:3248
+#: aeroscope/ui.py:3363
+#: aeroscope/ui.py:3466
+msgid "Create floating panel"
+msgstr ""
+
+#: aeroscope/ui.py:3267
+msgid "Could not open the photo."
+msgstr ""
+
+#: aeroscope/ui.py:3271
+#: aeroscope/ui.py:3971
+msgid "View photo"
+msgstr ""
+
+#: aeroscope/ui.py:3272
+#: aeroscope/ui.py:3971
+msgid "Photo unavailable"
+msgstr ""
+
+#: aeroscope/ui.py:3376
+#, python-brace-format
+msgid "{value0} removed from airport favorites."
+msgstr ""
+
+#: aeroscope/ui.py:3379
+#, python-brace-format
+msgid "{value0} added to airport favorites."
+msgstr ""
+
+#: aeroscope/ui.py:3383
+#, python-brace-format
+msgid "Could not save airport favorites: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:3401
+#, python-brace-format
+msgid "{value0} removed from station favorites."
+msgstr ""
+
+#: aeroscope/ui.py:3404
+#, python-brace-format
+msgid "{value0} added to station favorites."
+msgstr ""
+
+#: aeroscope/ui.py:3408
+#, python-brace-format
+msgid "Could not save station favorites: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:3487
+#, python-brace-format
+msgid "{value0} removed from watchlist."
+msgstr ""
+
+#: aeroscope/ui.py:3491
+#, python-brace-format
+msgid "{value0} added to watchlist."
+msgstr ""
+
+#: aeroscope/ui.py:3494
+#, python-brace-format
+msgid "Could not change favorite: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:3508
+#, python-format
+msgid "Notification: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3511
+#, python-format
+msgid "Could not deliver system notification: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3532
+#, python-format
+msgid "Audio unavailable: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3554
+msgid "Origin and destination"
+msgstr ""
+
+#: aeroscope/ui.py:3559
+msgid "No callsign available for route lookup."
+msgstr ""
+
+#: aeroscope/ui.py:3563
+msgid "Airport association unavailable in demo mode."
+msgstr ""
+
+#: aeroscope/ui.py:3575
+msgid "Checking association on ADSB.lol…"
+msgstr ""
+
+#: aeroscope/ui.py:3576
+msgid "Requests temporarily paused; try again later."
+msgstr ""
+
+#: aeroscope/ui.py:3581
+msgid "ADSB.lol did not identify origin/destination for this callsign."
+msgstr ""
+
+#: aeroscope/ui.py:3591
+#: aeroscope/ui.py:3677
+msgid "Origin"
+msgstr ""
+
+#: aeroscope/ui.py:3591
+#: aeroscope/ui.py:3677
+msgid "Destination"
+msgstr ""
+
+#: aeroscope/ui.py:3598
+msgid "The provider flagged this association as unlikely. Check the airports."
+msgstr ""
+
+#: aeroscope/ui.py:3602
+msgid "Probable route by callsign — not a flight plan or confirmed trajectory."
+msgstr ""
+
+#: aeroscope/ui.py:3606
+#, python-brace-format
+msgid "Geographic distance between airports: {value0:,.0f} km"
+msgstr ""
+
+#: aeroscope/ui.py:3610
+msgid ""
+"The API identified the airports but did not provide sufficient coordinates to"
+" draw a reliable geographic line."
+msgstr ""
+
+#: aeroscope/ui.py:3613
+msgid "Show estimated route"
+msgstr ""
+
+#: aeroscope/ui.py:3618
+msgid "View complete route"
+msgstr ""
+
+#: aeroscope/ui.py:3623
+msgid "Return to live radar"
+msgstr ""
+
+#: aeroscope/ui.py:3627
+msgid "Map updates paused while fitting the entire route."
+msgstr ""
+
+#: aeroscope/ui.py:3642
+#, python-format
+msgid "Route request limit: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3644
+#, python-format
+msgid "Route request %s: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3720
+msgid "Could not fit the estimated route."
+msgstr ""
+
+#: aeroscope/ui.py:3732
+msgid "Estimated geographic route · radar updates paused"
+msgstr ""
+
+#: aeroscope/ui.py:3754
+msgid "Live radar resumed."
+msgstr ""
+
+#: aeroscope/ui.py:3761
+msgid "Photo"
+msgstr ""
+
+#: aeroscope/ui.py:3768
+msgid "View original photo and credits"
+msgstr ""
+
+#: aeroscope/ui.py:3770
+#: aeroscope/ui.py:3908
+msgid "Original photo"
+msgstr ""
+
+#: aeroscope/ui.py:3782
+#, python-format
+msgid "Failed to prepare image for %s"
+msgstr ""
+
+#: aeroscope/ui.py:3783
+msgid "Failed to render image: "
+msgstr ""
+
+#: aeroscope/ui.py:3787
+msgid "Image unavailable."
+msgstr ""
+
+#: aeroscope/ui.py:3791
+msgid "Thumbnail unavailable; view the original."
+msgstr ""
+
+#: aeroscope/ui.py:3801
+msgid "No photo for this registration or ICAO24."
+msgstr ""
+
+#: aeroscope/ui.py:3803
+msgid "Photos unavailable in demo mode."
+msgstr ""
+
+#: aeroscope/ui.py:3805
+msgid "Checking Planespotters.net…"
+msgstr ""
+
+#: aeroscope/ui.py:3812
+msgid "ADSB.aero history"
+msgstr ""
+
+#: aeroscope/ui.py:3816
+msgid "Searching historical archive…"
+msgstr ""
+
+#: aeroscope/ui.py:3817
+msgid "History unavailable in demo mode."
+msgstr ""
+
+#: aeroscope/ui.py:3825
+msgid "No archived flights found in the requested period."
+msgstr ""
+
+#: aeroscope/ui.py:3837
+msgid ""
+"Violet historical replay: player above the map, segments without coverage "
+"kept separate."
+msgstr ""
+
+#: aeroscope/ui.py:3845
+#, python-format
+msgid "GDK could not decode photo of %s: %s. Trying GdkPixbuf."
+msgstr ""
+
+#: aeroscope/ui.py:3853
+#, python-format
+msgid "Photo %s decoded once (%s, %sx%s)"
+msgstr ""
+
+#: aeroscope/ui.py:3884
+msgid "View aircraft gallery"
+msgstr ""
+
+#: aeroscope/ui.py:3887
+msgid "Photo gallery · "
+msgstr ""
+
+#: aeroscope/ui.py:3904
+msgid "Open gallery in built-in browser"
+msgstr ""
+
+#: aeroscope/ui.py:3907
+msgid "Open original photo in built-in browser"
+msgstr ""
+
+#: aeroscope/ui.py:3922
+msgid " · Planespotters.net · thumbnail-resolution preview"
+msgstr ""
+
+#: aeroscope/ui.py:3932
+#, python-format
+msgid "Photo task started for ICAO24=%s, registration=%s"
+msgstr ""
+
+#: aeroscope/ui.py:3935
+#, python-format
+msgid "Photo task finished without a photo for %s"
+msgstr ""
+
+#: aeroscope/ui.py:3940
+#, python-format
+msgid "Aircraft thumbnail %s unavailable: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3956
+#, python-brace-format
+msgid "Failed to retrieve photos: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:3957
+#, python-format
+msgid "Photo lookup failed for %s: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3961
+msgid "Thumbnail not loaded: "
+msgstr ""
+
+#: aeroscope/ui.py:3961
+msgid ". Open the original photo."
+msgstr ""
+
+#: aeroscope/ui.py:3962
+#, python-format
+msgid "Thumbnail %s failed: %s"
+msgstr ""
+
+#: aeroscope/ui.py:3983
+msgid "Could not retrieve ADSB.aero history."
+msgstr ""
+
+#: aeroscope/ui.py:3996
+msgid "Loading archived trajectory…"
+msgstr ""
+
+#: aeroscope/ui.py:4002
+#, python-brace-format
+msgid "Failed to retrieve trajectory: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:4011
+msgid "No valid times or positions to replay this flight."
+msgstr ""
+
+#: aeroscope/ui.py:4044
+msgid "Archived flight aircraft; not a live position"
+msgstr ""
+
+#: aeroscope/ui.py:4051
+msgid "Historical aircraft"
+msgstr ""
+
+#: aeroscope/ui.py:4052
+msgid "Origin not identified"
+msgstr ""
+
+#: aeroscope/ui.py:4053
+msgid "Destination not identified"
+msgstr ""
+
+#: aeroscope/ui.py:4071
+msgid "Historical flight loaded. Use the player or expand the chart."
+msgstr ""
+
+#: aeroscope/ui.py:4098
+msgid "External page"
+msgstr ""
+
+#: aeroscope/ui.py:4105
+msgid "External address not authorized."
+msgstr ""
+
+#: aeroscope/ui.py:4111
+msgid "WebKitGTK unavailable: opening in default browser."
+msgstr ""
+
+#: aeroscope/ui.py:4120
+msgid "Open in default browser"
+msgstr ""
+
+#: aeroscope/ui.py:4178
+#, python-format
+msgid "SIGMET: click test unavailable: %s"
+msgstr ""
+
+#: aeroscope/ui.py:4228
+msgid "Invalid coordinates."
+msgstr ""
+
+#: aeroscope/ui.py:4266
+msgid "Enter at least two characters to search."
+msgstr ""
+
+#: aeroscope/ui.py:4297
+msgid "Searching for live aircraft and historical records…"
+msgstr ""
+
+#: aeroscope/ui.py:4298
+msgid "Searching live aircraft…"
+msgstr ""
+
+#: aeroscope/ui.py:4304
+msgid "Searching city…"
+msgstr ""
+
+#: aeroscope/ui.py:4312
+msgid "City not found. Try including the state or country."
+msgstr ""
+
+#: aeroscope/ui.py:4317
+msgid "Multiple locations found; showing the first result."
+msgstr ""
+
+#: aeroscope/ui.py:4324
+msgid "No position currently available for this aircraft."
+msgstr ""
+
+#: aeroscope/ui.py:4330
+msgid "Aircraft found. The radar is loading the area."
+msgstr ""
+
+#: aeroscope/ui.py:4345
+msgid "An approximate location request is already in progress."
+msgstr ""
+
+#: aeroscope/ui.py:4357
+msgid ""
+"AeroScope will contact the external service ipwho.is over HTTPS. That service"
+" will see your public IP address. The position may be inaccurate, especially "
+"when using a VPN, mobile network or remote provider. AeroScope will not save "
+"your IP address or location. Continue?"
+msgstr ""
+
+#: aeroscope/ui.py:4358
+msgid "Find location"
+msgstr ""
+
+#: aeroscope/ui.py:4359
+#: aeroscope/ui.py:4741
+msgid "Cancel"
+msgstr ""
+
+#: aeroscope/ui.py:4376
+msgid "Checking approximate location from public IP address…"
+msgstr ""
+
+#: aeroscope/ui.py:4399
+msgid "Would you like to use approximate IP location?"
+msgstr ""
+
+#: aeroscope/ui.py:4400
+msgid ""
+"This request sends your public IP address to ipwho.is and may return an "
+"inaccurate city. If you agree, AeroScope will remember your permission so "
+"this notice is not shown again. You can revoke it in Preferences. Continue?"
+msgstr ""
+
+#: aeroscope/ui.py:4402
+msgid "Use approximate IP location?"
+msgstr ""
+
+#: aeroscope/ui.py:4404
+msgid "Locate using IP"
+msgstr ""
+
+#: aeroscope/ui.py:4405
+msgid "Do not suggest again"
+msgstr ""
+
+#: aeroscope/ui.py:4406
+msgid "Not now"
+msgstr ""
+
+#: aeroscope/ui.py:4439
+#, python-brace-format
+msgid "{value0} · estimated by IP"
+msgstr ""
+
+#: aeroscope/ui.py:4441
+msgid "Approximate position by IP. It may not match your physical location."
+msgstr ""
+
+#: aeroscope/ui.py:4450
+#: aeroscope/ui.py:4518
+msgid "My location (GeoClue)"
+msgstr ""
+
+#: aeroscope/ui.py:4453
+msgid "Centering on last known position again."
+msgstr ""
+
+#: aeroscope/ui.py:4460
+msgid "Last approximate IP location"
+msgstr ""
+
+#: aeroscope/ui.py:4463
+msgid "Centering on last approximate IP location."
+msgstr ""
+
+#: aeroscope/ui.py:4473
+msgid "Trying to get location from GeoClue…"
+msgstr ""
+
+#: aeroscope/ui.py:4485
+#, python-brace-format
+msgid "System location unavailable: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:4486
+msgid "Could not use system location service."
+msgstr ""
+
+#: aeroscope/ui.py:4495
+msgid "System location did not respond."
+msgstr ""
+
+#: aeroscope/ui.py:4496
+msgid "System location did not respond within 18 seconds."
+msgstr ""
+
+#: aeroscope/ui.py:4512
+msgid "No positions returned"
+msgstr ""
+
+#: aeroscope/ui.py:4515
+msgid "Invalid coordinates"
+msgstr ""
+
+#: aeroscope/ui.py:4520
+msgid "Location found. The map has been centered."
+msgstr ""
+
+#: aeroscope/ui.py:4522
+#, python-brace-format
+msgid "Could not get system location: {value0}"
+msgstr ""
+
+#: aeroscope/ui.py:4523
+msgid "Location service could not determine your position."
+msgstr ""
+
+#: aeroscope/ui.py:4669
+#, python-format
+msgid "Could not identify primary monitor: %s"
+msgstr ""
+
+#: aeroscope/ui.py:4739
+msgid "System tray icon unavailable"
+msgstr ""
+
+#: aeroscope/ui.py:4740
+msgid ""
+"AeroScope can continue monitoring, but your desktop environment does not show"
+" a tray icon. You can reopen the app from the application list. "
+"Alternatively, open the mini-map or quit."
+msgstr ""
+
+#: aeroscope/ui.py:4742
+msgid "Continue without tray icon"
+msgstr ""
+
+#: aeroscope/ui.py:4744
+msgid "Quit"
+msgstr ""
+
+#: aeroscope/ui.py:4830
+msgid ""
+"Community aircraft radar for Linux.\n"
+"Data must not be used for aeronautical navigation or flight safety decisions."
+msgstr ""
+
+#: aeroscope/ui.py:4834
+msgid "Data and maps"
+msgstr ""
+
+#: aeroscope/ui.py:4835
+msgid "ADSB.lol — current positions (ODbL)"
+msgstr ""
+
+#: aeroscope/ui.py:4836
+msgid "ADSB.aero — archived history"
+msgstr ""
+
+#: aeroscope/ui.py:4852
+msgid "System tray missing at startup: opening regular window"
+msgstr ""
+
+#: aeroscope/ui.py:4871
+msgid "Photo diagnostics started. For details use: aeroscope --debug"
+msgstr ""
+
+#: aeroscope/validity_widget.py:39
+msgid "Elapsed portion of the SIGMET validity period, not weather severity."
+msgstr ""
+
+#: aeroscope/weather_data.py:34
+msgid "Weather response exceeds safety size limit"
+msgstr ""
+
+#: aeroscope/weather_data.py:50
+msgid "Invalid NOAA product"
+msgstr ""
+
+#: aeroscope/weather_data.py:245
+msgid "Invalid METAR station list"
+msgstr ""
+
+#: aeroscope/weather_data.py:252
+msgid "Unexpected regional METAR response"
+msgstr ""
+
+#: aeroscope/weather_data.py:291
+msgid "Invalid ICAO code"
+msgstr ""
+
+#: aeroscope/weather_data.py:297
+msgid "Unexpected METAR response"
+msgstr ""
+
+#: aeroscope/weather_ui.py:243
+#, python-format
+msgid ""
+"SIGMET: %d/%d visible advisories, %d vertices after simplification, rendering"
+" %.2f ms"
+msgstr ""
+
+#: aeroscope/weather_ui.py:300
+#, python-brace-format
+msgid "{value0} · Click for details"
+msgstr ""
+
+#: aeroscope/weather_ui.py:306
+#, python-format
+msgid "SIGMET symbol unavailable: %s"
+msgstr ""
+
+#: aeroscope/weather_ui.py:364
+#, python-brace-format
+msgid "Weather station {value0} · {value1} · {value2}"
+msgstr ""
+
+#: aeroscope/weather_ui.py:364
+msgid "METAR available"
+msgstr ""
+
+#: aeroscope/weather_ui.py:509
+#, python-format
+msgid "METAR: checking %s local airports by ICAO (batch)"
+msgstr ""
+
+#: aeroscope/weather_ui.py:519
+#, python-format
+msgid "Batch METAR by ICAO: %s"
+msgstr ""
+
+#: aeroscope/weather_ui.py:521
+#, python-format
+msgid "METAR: observations at %d/%d known stations"
+msgstr ""
+
+#: aeroscope/weather_ui.py:613
+#, python-format
+msgid "SIGMET near a saved location: %s"
+msgstr ""
+
+#: aeroscope/weather_ui.py:727
+#, python-format
+msgid "NOAA METAR/SIGMET: request failed: %s"
+msgstr ""
+
+#: aeroscope/weather_ui.py:738
+msgid "SIGMET: no active advisories in the requested area"
+msgstr ""
+
+#: aeroscope/weather_ui.py:741
+msgid "METAR: no stations with observations in the requested area"
+msgstr ""
+
+#: aeroscope/weather_ui.py:755
+#, python-format
+msgid "SIGMET: %d outlined advisories (of %d received)"
+msgstr ""
+
+#: aeroscope/weather_ui.py:875
+#, python-format
+msgid "Favorite METAR: checking %d airport/station codes"
+msgstr ""
+
+#: aeroscope/weather_ui.py:913
+#, python-brace-format
+msgid "Favorite METAR {value0}: {value1}"
+msgstr ""
+
+#: aeroscope/weather_ui.py:948
+msgid "New weather observation"
+msgstr ""
+
+#: aeroscope/weather_ui.py:951
+#, python-brace-format
+msgid "METAR updated · {value0}"
+msgstr ""
+
+#: aeroscope/weather_ui.py:995
+#, python-format
+msgid "Airport METAR %s: %s"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:53
+msgid "Alt++ or Alt+keypad +"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:54
+msgid "Alt+− or Alt+keypad −"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:55
+msgid "Alt+. or Alt+L"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:56
+msgid "Alt+F"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:60
+msgid "Alt+T"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:61
+msgid "Alt+S"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:62
+msgid "Alt+M"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:63
+msgid "Alt+A"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:64
+msgid "Alt+P"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:65
+msgid "Alt+B"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:66
+msgid "Alt+V"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:67
+msgid "Alt+E"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:71
+msgid "Alt+,"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts.py:72
+msgid "Alt+Q"
+msgstr ""
+
+#: aeroscope/keyboard_shortcuts_window.py:50
+msgid ""
+"Use Alt for AeroScope commands. Ctrl+A, Ctrl+C and Ctrl+V remain available "
+"for text editing; F1 and F11 work without Alt."
+msgstr ""
+

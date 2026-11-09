@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=AeroScope — Flight Radar
+Name[pt_BR]=AeroScope — Radar de Voos
+GenericName=Aircraft radar
+GenericName[pt_BR]=Radar aéreo
+Comment=Live aircraft tracking and aviation weather
+Comment[pt_BR]=Rastreamento de aeronaves e meteorologia aeronáutica
+Exec=aeroscope
+Icon=io.github.ehstbr.Aeroscope
+Terminal=false
+Type=Application
+Categories=Education;Science;Geography;
+Keywords=radar;aircraft;flight;aviation;ADS-B;avião;voo;aeronave;aviação;
+StartupNotify=true
