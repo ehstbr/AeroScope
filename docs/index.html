@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#101720">
+  <meta name="description" content="Manual oficial ilustrado do AeroScope 0.3.70: radar, pesquisa, aeronaves, METAR, SIGMET, favoritos, emergências e preferências.">
+  <title>Manual do AeroScope — Versão 0.3.70</title>
+  <link rel="icon" type="image/svg+xml" href="assets/aeroscope.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/manual.js"></script>
+</head>
+<body>
+  <div class="top-progress" id="read-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topbar" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Manual AeroScope - início"><img src="assets/aeroscope.svg" alt="" width="38" height="38"><span><b>AeroScope</b><small>Documentação do usuário</small></span></a>
+    <div class="topbar-actions"><span class="version">v0.3.70</span><button type="button" class="icon-btn mobile-menu" id="toggle-menu" aria-expanded="false" aria-controls="side-nav" title="Mostrar capítulos">☰ <span>Capítulos</span></button><button type="button" class="icon-btn" id="theme-btn" aria-label="Alternar tema claro ou escuro" title="Alternar tema">☼</button><button type="button" class="icon-btn print-btn" id="print-btn" title="Imprimir ou salvar em PDF">⎙</button></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar" id="side-nav" aria-label="Navegação do manual">
+      <div class="nav-inner"><label class="search-label" for="manual-search">Buscar no manual</label><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="manual-search" type="search" placeholder="Buscar assunto..." autocomplete="off" spellcheck="false"></div><p id="search-results" class="search-results" role="status" aria-live="polite">17 capítulos • leitura offline</p><nav aria-label="Capítulos"><a href="#introducao" data-nav="introducao"><span class="nav-numeral">01</span><span>Bem-vindo ao AeroScope</span></a>
+<a href="#instalacao" data-nav="instalacao"><span class="nav-numeral">02</span><span>Instalação e primeira abertura</span></a>
+<a href="#mapa" data-nav="mapa"><span class="nav-numeral">03</span><span>Mapa e navegação</span></a>
+<a href="#aeronaves" data-nav="aeronaves"><span class="nav-numeral">04</span><span>Aeronaves e informações de voo</span></a>
+<a href="#pesquisa" data-nav="pesquisa"><span class="nav-numeral">05</span><span>Pesquisa de aviões, aeroportos e cidades</span></a>
+<a href="#historico" data-nav="historico"><span class="nav-numeral">06</span><span>Histórico e reprodução de trajetórias</span></a>
+<a href="#aeroportos" data-nav="aeroportos"><span class="nav-numeral">07</span><span>Aeroportos e estações meteorológicas</span></a>
+<a href="#meteorologia" data-nav="meteorologia"><span class="nav-numeral">08</span><span>Meteorologia: METAR e SIGMET</span></a>
+<a href="#favoritos" data-nav="favoritos"><span class="nav-numeral">09</span><span>Favoritos e monitoramento</span></a>
+<a href="#emergencias" data-nav="emergencias"><span class="nav-numeral">10</span><span>Emergências e códigos squawk</span></a>
+<a href="#torre" data-nav="torre"><span class="nav-numeral">11</span><span>Modo torre de controle</span></a>
+<a href="#janelas" data-nav="janelas"><span class="nav-numeral">12</span><span>Mini-mapa, painéis e widgets</span></a>
+<a href="#preferencias" data-nav="preferencias"><span class="nav-numeral">13</span><span>Preferências do aplicativo</span></a>
+<a href="#atalhos" data-nav="atalhos"><span class="nav-numeral">14</span><span>Atalhos de teclado e menus</span></a>
+<a href="#localizacao" data-nav="localizacao"><span class="nav-numeral">15</span><span>Localização e privacidade</span></a>
+<a href="#solucao" data-nav="solucao"><span class="nav-numeral">16</span><span>Solução de problemas</span></a>
+<a href="#creditos" data-nav="creditos"><span class="nav-numeral">17</span><span>Fontes, créditos e informações legais</span></a></nav><div class="sidebar-bottom"><span class="status-dot"></span> Conteúdo e imagens locais<br><small>Sem serviços externos para navegar no manual.</small></div></div>
+    </aside>
+    <main id="conteudo">
+      <div class="hero"><div class="hero-copy"><div class="hero-tag">GUIA ILUSTRADO · LINUX</div><h1>O céu, de um jeito mais claro.</h1><p>Seu manual completo para explorar o AeroScope: acompanhe aeronaves, consulte meteorologia e organize seu radar, passo a passo.</p><div class="hero-controls"><a class="primary-link" href="#introducao">Começar a explorar <span aria-hidden="true">→</span></a><a class="secondary-link" href="#atalhos">Ver atalhos</a></div><div class="hero-meta">Manual do usuário <span>•</span> v0.3.70 <span>•</span> 09 nov. 2026</div></div><div class="hero-image"><img src="assets/screenshots/torre-controle.webp" alt="Radar AeroScope com aeronaves e anéis de modo torre"></div></div>
+      <div class="notice-strip"><span aria-hidden="true">◎</span><p><strong>Feito para consulta offline.</strong> Este manual está inteiramente dentro da pasta <code>docs/</code>. A interface do manual não depende de internet; o aplicativo precisa de rede para obter dados ao vivo.</p></div>
+      <div class="content-wrap"><section class="manual-section" id="introducao" aria-labelledby="title-introducao">
+  <div class="section-head"><span class="eyebrow">Visão geral <span class="section-counter">/ 01</span></span><h2 id="title-introducao">Bem-vindo ao AeroScope</h2><p class="section-summary">O radar comunitário para acompanhar aeronaves, aeroportos e meteorologia aeronáutica no Linux.</p></div>
+  <div class="section-content">
+<p>O <strong>AeroScope</strong> é um aplicativo Linux construído com GTK4 e Libadwaita. Ele reúne posições públicas de aeronaves, recursos de pesquisa, histórico arquivado, informações meteorológicas e monitoramento de favoritos em um mapa interativo.</p>
+<div class="feature-grid"><div><span class="feature-icon">✈</span><b>Aeronaves ao vivo</b><small>Dados regionais ADS-B com atualização periódica.</small></div><div><span class="feature-icon">⌕</span><b>Pesquisa integrada</b><small>Aviões, aeroportos e cidades no mesmo campo.</small></div><div><span class="feature-icon">☁</span><b>Meteorologia</b><small>METAR e SIGMET da NOAA, quando disponíveis.</small></div><div><span class="feature-icon">☆</span><b>Monitoramento</b><small>Favoritos, estações e códigos especiais de transponder.</small></div></div>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/mapa-aeronaves-visiveis.webp" data-caption="A interface principal, com a lista de aeronaves à esquerda e o mapa à direita." aria-label="Ampliar imagem: A interface principal, com a lista de aeronaves à esquerda e o mapa à direita."><img loading="lazy" decoding="async" src="assets/screenshots/mapa-aeronaves-visiveis.webp" alt="Captura da interface principal do AeroScope com aeronaves identificadas no mapa."></button>
+      <figcaption><span class="figure-index">Figura 01</span> A interface principal, com a lista de aeronaves à esquerda e o mapa à direita.</figcaption></figure>
+<h3>Antes de começar</h3><p>O AeroScope depende de fontes públicas e da conexão com a internet para obter posições e novos boletins. A presença de uma aeronave na região não garante que ela esteja visível no serviço: há limitações de cobertura, recepção, processamento e disponibilidade da API.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>O AeroScope é uma ferramenta informativa. <strong>Não deve ser utilizado para navegação, separação de aeronaves, controle de tráfego aéreo ou decisões de segurança operacional.</strong></p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="instalacao" aria-labelledby="title-instalacao">
+  <div class="section-head"><span class="eyebrow">Começar <span class="section-counter">/ 02</span></span><h2 id="title-instalacao">Instalação e primeira abertura</h2><p class="section-summary">Instale o pacote .deb e conheça o comportamento inicial do radar.</p></div>
+  <div class="section-content">
+<h3>Instalação em sistemas compatíveis</h3>
+<p>No Ubuntu ou Debian com as bibliotecas GTK4, Libadwaita e Libshumate compatíveis, instale o pacote fornecido com o projeto. Exemplo para a versão documentada:</p>
+<pre><code>sudo apt install ./aeroscope_0.3.70_all.deb</code></pre>
+<p>Depois, abra <strong>AeroScope</strong> pelo menu de aplicativos ou execute <code>aeroscope</code> em um terminal. O comando <code>aeroscope --demo</code> ativa o modo de demonstração disponível no código.</p>
+<h3>O que acontece na primeira abertura?</h3>
+<ol class="steps"><li>A janela abre o mapa e inicia o processo de localização conforme as permissões do sistema.</li><li>A tela de preparação pode aparecer enquanto o radar recebe as primeiras amostras.</li><li>As primeiras consultas preenchem os marcadores de aeronaves; depois o AeroScope segue o intervalo configurado.</li><li>Você já pode usar a pesquisa, mover o mapa ou abrir as Preferências.</li></ol>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/inicio-localizacao.webp" data-caption="Tela de preparação do radar ao iniciar." aria-label="Ampliar imagem: Tela de preparação do radar ao iniciar."><img loading="lazy" decoding="async" src="assets/screenshots/inicio-localizacao.webp" alt="Tela de preparação do radar ao iniciar."></button>
+      <figcaption><span class="figure-index">Figura 02</span> Tela de preparação do radar ao iniciar.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/inicio-consulta.webp" data-caption="Primeiros instantes da consulta regional com o mapa carregado." aria-label="Ampliar imagem: Primeiros instantes da consulta regional com o mapa carregado."><img loading="lazy" decoding="async" src="assets/screenshots/inicio-consulta.webp" alt="Primeiros instantes da consulta regional com o mapa carregado."></button>
+      <figcaption><span class="figure-index">Figura 03</span> Primeiros instantes da consulta regional com o mapa carregado.</figcaption></figure></div>
+<p>Se não houver autorização de localização, o aplicativo pode manter a região padrão ou a área escolhida pelo usuário. Você não precisa fornecer uma localização para navegar manualmente.</p>
+<aside class="callout note"><span class="callout-symbol" aria-hidden="true">ⓘ</span><div><strong>Observação</strong><p>Os avisos de preparação não significam que o aplicativo está travado. O tempo e o resultado dependem da conexão e da resposta do provedor.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="mapa" aria-labelledby="title-mapa">
+  <div class="section-head"><span class="eyebrow">Interface <span class="section-counter">/ 03</span></span><h2 id="title-mapa">Mapa e navegação</h2><p class="section-summary">Saiba interpretar a área central, os controles e a atualização regional.</p></div>
+  <div class="section-content">
+<h3>Elementos da janela principal</h3>
+<p>O painel à esquerda contém a pesquisa e as abas <strong>Visíveis</strong>, <strong>Favoritos</strong> e <strong>Emergências</strong>. O mapa ocupa a área principal. A barra superior exibe informações de atualização e oferece acesso ao menu, à atualização manual e aos controles da janela.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/mapa-aeronaves-visiveis.webp" data-caption="Aeronaves identificadas sobre o mapa; as informações disponíveis variam por região." aria-label="Ampliar imagem: Aeronaves identificadas sobre o mapa; as informações disponíveis variam por região."><img loading="lazy" decoding="async" src="assets/screenshots/mapa-aeronaves-visiveis.webp" alt="Aeronaves identificadas sobre o mapa; as informações disponíveis variam por região."></button>
+      <figcaption><span class="figure-index">Figura 04</span> Aeronaves identificadas sobre o mapa; as informações disponíveis variam por região.</figcaption></figure>
+<h3>Mover, aproximar e centralizar</h3>
+<ol class="steps"><li><strong>Arraste</strong> o mapa com o mouse ou use as setas direcionais quando o mapa estiver com foco.</li><li>Utilize a roda do mouse ou os botões <strong>+</strong> e <strong>−</strong> na borda direita para ajustar o zoom.</li><li>Use o botão de localização para voltar a uma posição obtida com a permissão disponível.</li><li>O botão de atualização na barra superior solicita uma nova consulta, respeitando os limites internos.</li></ol>
+<p>As setas direcionais realizam um deslocamento suave, com aceleração e desaceleração. Quando a busca ou outro campo de texto estiver em foco, as teclas continuam atuando nesses controles.</p>
+<h3>Área consultada e atualização</h3><p>O radar consulta uma área de aproximadamente <strong>250 milhas náuticas de raio</strong> em torno de um centro de consulta. O AeroScope reutiliza a cobertura enquanto o mapa se move dentro dela e faz novas solicitações quando necessário, com proteção contra excesso de consultas. O intervalo mínimo de atualização regional é de 10 segundos, sujeito aos limites do serviço.</p>
+<aside class="callout note"><span class="callout-symbol" aria-hidden="true">ⓘ</span><div><strong>Observação</strong><p>Ao afastar muito o zoom, o mapa pode mostrar uma área maior do que a cobertura consultada. A ausência de marcadores fora da cobertura não significa que não há aviões.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="aeronaves" aria-labelledby="title-aeronaves">
+  <div class="section-head"><span class="eyebrow">Rastreamento <span class="section-counter">/ 04</span></span><h2 id="title-aeronaves">Aeronaves e informações de voo</h2><p class="section-summary">Selecione um avião e entenda os dados apresentados na barra lateral.</p></div>
+  <div class="section-content">
+<h3>Selecionar uma aeronave</h3>
+<p>Clique em um marcador no mapa ou no item correspondente da aba <strong>Visíveis</strong>. O painel lateral mostra as informações recebidas e, quando disponíveis, identificação de voo, matrícula, modelo, altitude, velocidade, rumo, squawk, origem/destino associados e fotografia.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/aeronave-foto-historico.webp" data-caption="Painel de detalhes com fotografia, informações da aeronave e registros arquivados." aria-label="Ampliar imagem: Painel de detalhes com fotografia, informações da aeronave e registros arquivados."><img loading="lazy" decoding="async" src="assets/screenshots/aeronave-foto-historico.webp" alt="Painel de detalhes com fotografia, informações da aeronave e registros arquivados."></button>
+      <figcaption><span class="figure-index">Figura 05</span> Painel de detalhes com fotografia, informações da aeronave e registros arquivados.</figcaption></figure>
+<p>Passar o ponteiro sobre uma aeronave ou sobre seu item na lista ajuda a identificá-la sem selecioná-la permanentemente. Clique em uma área vazia do mapa para desfazer a seleção. Quando um sinal deixa de ser recebido, os dados podem representar a última leitura.</p>
+<h3>O que significam os dados?</h3>
+<div class="table-scroll"><table><thead><tr><th>Campo</th><th>Interpretação</th></tr></thead><tbody>
+<tr><td>Voo / matrícula</td><td>Identificação transmitida ou associada ao cadastro da aeronave.</td></tr>
+<tr><td>ICAO24</td><td>Identificador hexadecimal de 24 bits da aeronave.</td></tr>
+<tr><td>Altitude</td><td>Altitude informada pela fonte de dados; não é medição feita pelo aplicativo.</td></tr>
+<tr><td>Velocidade</td><td>Valor recebido, apresentado na unidade escolhida em Preferências.</td></tr>
+<tr><td>Rumo</td><td>Orientação/traçado estimado com base nos dados disponíveis.</td></tr>
+<tr><td>Squawk</td><td>Código configurado no transponder quando informado pela fonte.</td></tr>
+<tr><td>Fonte/último sinal</td><td>Indicação de origem e atualidade da posição, quando disponível.</td></tr>
+</tbody></table></div>
+<h3>Fotos e origem/destino</h3><p>Fotografias vêm do Planespotters.net e são consultadas sob demanda, com créditos. A origem e o destino podem vir de associação com serviços externos e não constituem um plano de voo confirmado. Algumas aeronaves não terão foto, rota ou detalhes completos.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>A animação entre pontos recebidos é uma transição visual: <strong>não equivale a uma nova medição em tempo real</strong>.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="pesquisa" aria-labelledby="title-pesquisa">
+  <div class="section-head"><span class="eyebrow">Encontrar <span class="section-counter">/ 05</span></span><h2 id="title-pesquisa">Pesquisa de aviões, aeroportos e cidades</h2><p class="section-summary">Use um único campo para navegar rapidamente a lugares e aeronaves.</p></div>
+  <div class="section-content">
+<p>Na parte superior da barra lateral, digite uma identificação de voo, matrícula, código de aeroporto (ICAO/IATA) ou nome de cidade. As sugestões aparecem agrupadas por tipo.</p>
+<ol class="steps"><li>Clique no campo <strong>Pesquisar</strong> ou use <kbd>Alt+F</kbd>.</li><li>Digite um termo; aguarde as sugestões de aeronaves, aeroportos ou cidades.</li><li>Selecione um resultado para navegar até o local ou abrir a informação correspondente.</li><li>Para uma nova busca, edite o termo ou limpe o campo.</li></ol>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/pesquisa-sugestoes.webp" data-caption="Pesquisa por cidade com sugestões de aeroportos e localidades." aria-label="Ampliar imagem: Pesquisa por cidade com sugestões de aeroportos e localidades."><img loading="lazy" decoding="async" src="assets/screenshots/pesquisa-sugestoes.webp" alt="Lista de sugestões de pesquisa contendo aeroportos e cidades."></button>
+      <figcaption><span class="figure-index">Figura 06</span> Pesquisa por cidade com sugestões de aeroportos e localidades.</figcaption></figure>
+<p>A disponibilidade de localidades depende dos catálogos e dos provedores de geocodificação. Pesquisas de cidades usam um serviço externo quando necessário. A busca não garante encontrar todas as aeronaves do planeta.</p>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="historico" aria-labelledby="title-historico">
+  <div class="section-head"><span class="eyebrow">Analisar <span class="section-counter">/ 06</span></span><h2 id="title-historico">Histórico e reprodução de trajetórias</h2><p class="section-summary">Consulte registros arquivados e explore telemetria em uma linha do tempo.</p></div>
+  <div class="section-content">
+<p>Quando a opção <strong>Consultar histórico de voos</strong> está habilitada, selecionar uma aeronave pode recuperar registros históricos disponíveis pelo ADSB.aero. Na lateral, escolha um registro para abrir o reprodutor.</p>
+<ol class="steps"><li>Selecione uma aeronave e procure a seção <strong>Histórico ADS-B</strong>.</li><li>Clique em um dos registros disponíveis.</li><li>Use o botão de reprodução, a linha do tempo e o seletor de velocidade para avançar ou voltar.</li><li>Expanda o gráfico para comparar altitude, velocidade e tempo ou distância.</li><li>Feche o modo de reprodução para retornar à visualização normal.</li></ol>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/reproducao-historica.webp" data-caption="Reprodutor histórico sobre o mapa, com trilha e controles." aria-label="Ampliar imagem: Reprodutor histórico sobre o mapa, com trilha e controles."><img loading="lazy" decoding="async" src="assets/screenshots/reproducao-historica.webp" alt="Reprodutor histórico sobre o mapa, com trilha e controles."></button>
+      <figcaption><span class="figure-index">Figura 07</span> Reprodutor histórico sobre o mapa, com trilha e controles.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/grafico-historico.webp" data-caption="Gráfico ampliado com altitude, velocidade e seleção de eixo." aria-label="Ampliar imagem: Gráfico ampliado com altitude, velocidade e seleção de eixo."><img loading="lazy" decoding="async" src="assets/screenshots/grafico-historico.webp" alt="Gráfico ampliado com altitude, velocidade e seleção de eixo."></button>
+      <figcaption><span class="figure-index">Figura 08</span> Gráfico ampliado com altitude, velocidade e seleção de eixo.</figcaption></figure></div>
+<h3>Como interpretar a trajetória</h3><p>O mapa ajusta o enquadramento para exibir os segmentos históricos disponíveis. Trechos sem dados não são ligados artificialmente; o rastro da sessão atual e o histórico arquivado são conceitos distintos. No gráfico, os eixos podem alternar entre tempo UTC, tempo decorrido e distância, conforme o registro.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>O histórico disponível pode ser incompleto ou corresponder a um registro anterior, e não necessariamente ao voo que está acontecendo neste momento. O AeroScope não inventa pontos para preencher lacunas.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="aeroportos" aria-labelledby="title-aeroportos">
+  <div class="section-head"><span class="eyebrow">Locais <span class="section-counter">/ 07</span></span><h2 id="title-aeroportos">Aeroportos e estações meteorológicas</h2><p class="section-summary">Abra informações locais e consulte boletins de condições de voo.</p></div>
+  <div class="section-content">
+<p>Marcadores de aeroportos aparecem no mapa quando ativados nas Preferências. Clique em um marcador, ou localize-o pela pesquisa, para consultar o painel correspondente.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/aeroporto-metar.webp" data-caption="Informações de um aeroporto com observação meteorológica disponível." aria-label="Ampliar imagem: Informações de um aeroporto com observação meteorológica disponível."><img loading="lazy" decoding="async" src="assets/screenshots/aeroporto-metar.webp" alt="Informações de um aeroporto com observação meteorológica disponível."></button>
+      <figcaption><span class="figure-index">Figura 09</span> Informações de um aeroporto com observação meteorológica disponível.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/estacao-metar.webp" data-caption="Inspetor de estação meteorológica e condições METAR locais." aria-label="Ampliar imagem: Inspetor de estação meteorológica e condições METAR locais."><img loading="lazy" decoding="async" src="assets/screenshots/estacao-metar.webp" alt="Inspetor de estação meteorológica e condições METAR locais."></button>
+      <figcaption><span class="figure-index">Figura 10</span> Inspetor de estação meteorológica e condições METAR locais.</figcaption></figure></div>
+<h3>Informações normalmente disponíveis</h3><p>Nome e código do aeroporto, posição no mapa e, quando houver boletim da NOAA, vento, temperatura, visibilidade, cobertura de nuvens e categoria meteorológica. A presença de METAR depende da estação, do horário e da cobertura do provedor.</p>
+<p>Uma opção de chegadas e partidas pode abrir a página pública de terceiros para consulta. O AeroScope <strong>não oferece uma tabela própria de horários de voos</strong>, e esse recurso precisa de internet e, para visualização interna, de WebKitGTK.</p>
+<h3>Favoritar e centralizar</h3><p>Nos painéis de aeroportos e estações, utilize a estrela para salvar o local e os controles do cabeçalho para centralizar ou fechar os detalhes. Os locais salvos também podem participar do monitoramento meteorológico periódico.</p>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="meteorologia" aria-labelledby="title-meteorologia">
+  <div class="section-head"><span class="eyebrow">NOAA Aviation Weather <span class="section-counter">/ 08</span></span><h2 id="title-meteorologia">Meteorologia: METAR e SIGMET</h2><p class="section-summary">Entenda as camadas meteorológicas e os indicadores sobre o mapa.</p></div>
+  <div class="section-content">
+<h3>METAR: observações de aeroportos</h3><p>O METAR descreve condições observadas em uma estação meteorológica aeronáutica. O AeroScope apresenta um resumo legível e mantém acesso ao boletim técnico. Dependendo dos dados, você verá classificações como:</p>
+<div class="chips"><span class="chip vfr">VFR</span><span class="chip mvfr">MVFR</span><span class="chip ifr">IFR</span><span class="chip lifr">LIFR</span></div>
+<p>Essas categorias sintetizam condições de voo por referência a teto e visibilidade. São indicadores do boletim observado, <strong>não uma autorização para voar</strong>.</p>
+<h3>SIGMET: avisos significativos</h3><p>SIGMETs são boletins sobre fenômenos meteorológicos potencialmente perigosos para a aviação. Quando a camada está ativada, áreas, contornos, etiquetas e informações de validade podem ser mostrados sobre o mapa. Selecione uma área ou etiqueta para ler o resumo e, quando disponível, o texto original do aviso.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/sigmet-areas-mapa.webp" data-caption="Áreas e etiquetas SIGMET representadas sobre o mapa." aria-label="Ampliar imagem: Áreas e etiquetas SIGMET representadas sobre o mapa."><img loading="lazy" decoding="async" src="assets/screenshots/sigmet-areas-mapa.webp" alt="Áreas e etiquetas SIGMET representadas sobre o mapa."></button>
+      <figcaption><span class="figure-index">Figura 11</span> Áreas e etiquetas SIGMET representadas sobre o mapa.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/sigmet-boletim.webp" data-caption="Inspetor lateral com detalhes de um aviso SIGMET." aria-label="Ampliar imagem: Inspetor lateral com detalhes de um aviso SIGMET."><img loading="lazy" decoding="async" src="assets/screenshots/sigmet-boletim.webp" alt="Inspetor lateral com detalhes de um aviso SIGMET."></button>
+      <figcaption><span class="figure-index">Figura 12</span> Inspetor lateral com detalhes de um aviso SIGMET.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/sigmet-inspecao.webp" data-caption="Detalhes e interpretação de avisos meteorológicos para a região." aria-label="Ampliar imagem: Detalhes e interpretação de avisos meteorológicos para a região."><img loading="lazy" decoding="async" src="assets/screenshots/sigmet-inspecao.webp" alt="Detalhes e interpretação de avisos meteorológicos para a região."></button>
+      <figcaption><span class="figure-index">Figura 13</span> Detalhes e interpretação de avisos meteorológicos para a região.</figcaption></figure></div>
+<h3>Ativar as camadas</h3><p>Utilize o menu <strong>Visualização → Meteorologia</strong>, as opções de <strong>Preferências → Aparência</strong> ou os atalhos <kbd>Alt+M</kbd> para METAR e <kbd>Alt+A</kbd> para SIGMET. As consultas regionais usam cache e intervalos próprios; deslocar o mapa para uma região nova pode antecipar uma atualização, respeitando limites.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>As áreas de SIGMET são aproximações do boletim publicado. METAR e SIGMET não substituem informação oficial, atualizada e validada para planejamento ou operação de voo.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="favoritos" aria-labelledby="title-favoritos">
+  <div class="section-head"><span class="eyebrow">Acompanhar <span class="section-counter">/ 09</span></span><h2 id="title-favoritos">Favoritos e monitoramento</h2><p class="section-summary">Salve aeronaves e locais para consultar e monitorar suas informações.</p></div>
+  <div class="section-content">
+<p>Abra a aba <strong>Favoritos</strong> na lateral ou use <kbd>Alt+B</kbd>. O monitoramento de aeronaves favoritas é independente da lista de aeronaves visíveis na região atual.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/favoritos-aeronaves-meteorologia.webp" data-caption="Aba de Favoritos com aeronave, aeroportos e estações salvos." aria-label="Ampliar imagem: Aba de Favoritos com aeronave, aeroportos e estações salvos."><img loading="lazy" decoding="async" src="assets/screenshots/favoritos-aeronaves-meteorologia.webp" alt="Aba de Favoritos com aeronave, aeroportos e estações salvos."></button>
+      <figcaption><span class="figure-index">Figura 14</span> Aba de Favoritos com aeronave, aeroportos e estações salvos.</figcaption></figure>
+<h3>Adicionar e acompanhar</h3><ol class="steps"><li>Selecione uma aeronave, aeroporto ou estação e utilize a ação de favoritar quando disponível.</li><li>Abra a aba de Favoritos para consultar os itens guardados.</li><li>Use os controles de cada item para localizar no mapa, atualizar ou remover.</li><li>Ajuste em Preferências → Monitor os intervalos e as notificações desejadas.</li></ol>
+<p>Uma notificação de aeronave aparentemente em voo após um período sem sinal é uma <strong>inferência</strong> baseada nos dados recebidos; não confirma decolagem. A ausência de sinal ADS-B não comprova pouso.</p>
+<p>O monitoramento de METARs favoritos pode verificar boletins mesmo de estações fora do mapa atual, respeitando o intervalo configurado.</p>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="emergencias" aria-labelledby="title-emergencias">
+  <div class="section-head"><span class="eyebrow">Monitor global <span class="section-counter">/ 10</span></span><h2 id="title-emergencias">Emergências e códigos squawk</h2><p class="section-summary">Veja ocorrências identificadas pelos códigos especiais do transponder e acompanhe seus detalhes.</p></div>
+  <div class="section-content">
+<p>A aba <strong>Emergências</strong>, acessível também por <kbd>Alt+E</kbd>, reúne aeronaves detectadas com códigos de transponder selecionados na consulta global. A tela mostra a última verificação, a quantidade de resultados e acesso ao histórico, quando disponível.</p>
+<h3>Visão geral da lista de emergências</h3>
+<p>Na captura abaixo, o AeroScope apresenta uma aeronave identificada como <strong>N6377T</strong>, transmitindo o código <strong>7600</strong> (indicação de falha de comunicação). Repare que o mapa principal está em Minas Gerais: a lista de emergências é <strong>global</strong> e pode mostrar aeronaves fora da região visualizada.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/emergencias-painel.png" data-caption="Lista global de emergências com uma aeronave N6377T transmitindo código 7600, enquanto o mapa permanece em Minas Gerais." aria-label="Ampliar imagem: Lista global de emergências com indicação do código 7600."><img loading="lazy" decoding="async" src="assets/screenshots/emergencias-painel.png" alt="Captura do AeroScope com a aba Emergências (1) aberta, aeronave N6377T e código 7600 na lista, sobre mapa da região de Divinópolis."></button>
+      <figcaption><span class="figure-index">Figura 15</span> Lista global de emergências: uma aeronave com código 7600, mesmo fora da área atual do mapa.</figcaption></figure>
+<h3>Centralizar e examinar uma aeronave</h3>
+<ol class="steps"><li>Abra a aba <strong>Emergências</strong> e localize a aeronave na lista.</li><li>Use o botão de centralização no item para deslocar o mapa até a última posição informada.</li><li>Selecione a aeronave para consultar os detalhes disponíveis, como identificação, altitude, velocidade, rumo e alerta transmitido.</li><li>Observe a data ou horário da consulta: a última posição recebida pode não representar a posição atual.</li></ol>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/emergencias-detalhes.png" data-caption="Aeronave N6377T centralizada nos Estados Unidos, com painel de informações e indicação do código 7600." aria-label="Ampliar imagem: Aeronave com indicação de código 7600 e seus detalhes no AeroScope."><img loading="lazy" decoding="async" src="assets/screenshots/emergencias-detalhes.png" alt="Captura do AeroScope com aeronave N6377T centralizada na região de Lafayette, Louisiana, e painel de detalhes exibindo falha de comunicação."></button>
+      <figcaption><span class="figure-index">Figura 16</span> Detalhes da aeronave N6377T: indicação de falha de comunicação (7600) e última posição publicada.</figcaption></figure>
+<div class="table-scroll"><table><thead><tr><th>Código</th><th>Significado comum</th><th>Limite de interpretação</th></tr></thead><tbody>
+<tr><td><span class="squawk">7700</span></td><td>Emergência geral</td><td>Não demonstra, por si só, que houve chamada MAYDAY.</td></tr>
+<tr><td><span class="squawk">7600</span></td><td>Falha de comunicação por rádio</td><td>O estado pode mudar e exige confirmação por outras fontes.</td></tr>
+<tr><td><span class="squawk">7500</span></td><td>Interferência ilícita</td><td>É um código sensível; não se deve inferir um incidente apenas por uma aparição isolada.</td></tr>
+</tbody></table></div>
+<h3>Quando nenhuma emergência aparece</h3><p>Uma lista vazia significa apenas que <strong>a consulta mostrada não retornou nenhuma aeronave com esses códigos</strong>. Isso não é uma certificação de ausência de ocorrências mundiais. Cobertura e conectividade podem limitar os resultados.</p>
+<p>Nas <strong>Preferências → Monitor</strong>, você pode configurar atualizações periódicas, notificações de novos códigos e aviso sonoro. A primeira consulta estabelece uma referência e não dispara um alerta artificial.</p>
+<aside class="callout note"><span class="callout-symbol" aria-hidden="true">ⓘ</span><div><strong>Interprete os códigos com cuidado</strong><p>As imagens mostram uma indicação transmitida e recebida pelas fontes ADS-B, <strong>não uma confirmação independente de emergência real</strong>. Uma indicação isolada, temporária ou desatualizada não permite concluir as circunstâncias do voo.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="torre" aria-labelledby="title-torre">
+  <div class="section-head"><span class="eyebrow">Visualização especial <span class="section-counter">/ 11</span></span><h2 id="title-torre">Modo torre de controle</h2><p class="section-summary">Conheça os anéis, o varrimento giratório e a orientação visual.</p></div>
+  <div class="section-content">
+<p>O modo torre sobrepõe elementos gráficos inspirados em um radar de vigilância, incluindo círculos concêntricos, marcações e uma linha de varredura opcional. Ele modifica a aparência do mapa, não a fonte ou a confiabilidade dos dados recebidos.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/torre-controle.webp" data-caption="Visualização em modo torre com anéis radiais e controle de varredura." aria-label="Ampliar imagem: Visualização em modo torre com anéis radiais e controle de varredura."><img loading="lazy" decoding="async" src="assets/screenshots/torre-controle.webp" alt="Visualização em modo torre com anéis radiais e controle de varredura."></button>
+      <figcaption><span class="figure-index">Figura 17</span> Visualização em modo torre com anéis radiais e controle de varredura.</figcaption></figure>
+<ol class="steps"><li>Abra o menu principal e ative <strong>Modo torre de controle</strong>, ou use <kbd>Alt+T</kbd>.</li><li>Se desejar, ative <strong>Varredura giratória</strong> pelo menu ou por <kbd>Alt+S</kbd>.</li><li>Ajuste o zoom e a posição do mapa normalmente.</li><li>Desative o modo no mesmo comando para voltar à visualização padrão.</li></ol>
+<p>Com a varredura ligada, a exibição das posições recebidas acompanha a linha giratória. Isso é um efeito visual realizado localmente, sem solicitar novas posições a cada passagem.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>Os círculos são referências visuais do modo torre, não instrumentos de medição homologados para separação ou navegação aérea.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="janelas" aria-labelledby="title-janelas">
+  <div class="section-head"><span class="eyebrow">Organizar <span class="section-counter">/ 12</span></span><h2 id="title-janelas">Mini-mapa, painéis e widgets</h2><p class="section-summary">Use visualizações compactas para acompanhar informações sem ocupar a tela toda.</p></div>
+  <div class="section-content">
+<h3>Mini-mapa (PiP)</h3><p>Pressione <kbd>Alt+P</kbd> ou escolha <strong>Mostrar mini-mapa</strong> no menu. O PiP abre uma janela compacta com mapa, aeronaves e controles de navegação. Ela pode funcionar com a janela principal aberta ou no modo de acompanhamento de segundo plano, conforme as configurações.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/mini-mapa.webp" data-caption="Mini-mapa independente e compacto." aria-label="Ampliar imagem: Mini-mapa independente e compacto."><img loading="lazy" decoding="async" src="assets/screenshots/mini-mapa.webp" alt="Mini-mapa independente e compacto."></button>
+      <figcaption><span class="figure-index">Figura 18</span> Mini-mapa independente e compacto.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/mini-mapa-widgets.webp" data-caption="Mini-mapa acompanhado de widgets de informações." aria-label="Ampliar imagem: Mini-mapa acompanhado de widgets de informações."><img loading="lazy" decoding="async" src="assets/screenshots/mini-mapa-widgets.webp" alt="Mini-mapa acompanhado de widgets de informações."></button>
+      <figcaption><span class="figure-index">Figura 19</span> Mini-mapa acompanhado de widgets de informações.</figcaption></figure></div>
+<h3>Widgets flutuantes</h3><p>O AeroScope permite criar pequenos painéis sobre o mapa a partir de itens compatíveis. Eles podem mostrar informações de uma aeronave, aeroporto ou estação meteorológica; seus controles permitem mover, recolher, centralizar e fechar. Nos widgets de aeronaves, o acompanhamento pode ser alternado quando a aeronave está presente nos dados.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/widgets-flutuantes.webp" data-caption="Painéis flutuantes abertos com informação aeronáutica e meteorológica." aria-label="Ampliar imagem: Painéis flutuantes abertos com informação aeronáutica e meteorológica."><img loading="lazy" decoding="async" src="assets/screenshots/widgets-flutuantes.webp" alt="Painéis flutuantes abertos com informação aeronáutica e meteorológica."></button>
+      <figcaption><span class="figure-index">Figura 20</span> Painéis flutuantes abertos com informação aeronáutica e meteorológica.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/widgets-compactos.webp" data-caption="Widgets compactos e recolhidos para liberar espaço." aria-label="Ampliar imagem: Widgets compactos e recolhidos para liberar espaço."><img loading="lazy" decoding="async" src="assets/screenshots/widgets-compactos.webp" alt="Widgets compactos e recolhidos para liberar espaço."></button>
+      <figcaption><span class="figure-index">Figura 21</span> Widgets compactos e recolhidos para liberar espaço.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/widgets-em-mapa.webp" data-caption="Vários widgets organizados no mapa principal." aria-label="Ampliar imagem: Vários widgets organizados no mapa principal."><img loading="lazy" decoding="async" src="assets/screenshots/widgets-em-mapa.webp" alt="Vários widgets organizados no mapa principal."></button>
+      <figcaption><span class="figure-index">Figura 22</span> Vários widgets organizados no mapa principal.</figcaption></figure></div>
+<h3>Modo painel em tela cheia</h3><p>Pressione <kbd>F11</kbd> para a apresentação em tela cheia. Os widgets continuam utilizáveis nesse modo e suas posições são preservadas pelo aplicativo. Para retornar à janela normal, pressione <kbd>Esc</kbd> ou <kbd>F11</kbd>.</p>
+<p>A opção <strong>Mini-mapa sempre no topo</strong> depende do gerenciador de janelas: no Wayland/GNOME, o sistema pode não permitir que o aplicativo imponha essa preferência automaticamente.</p>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="preferencias" aria-labelledby="title-preferencias">
+  <div class="section-head"><span class="eyebrow">Personalizar <span class="section-counter">/ 13</span></span><h2 id="title-preferencias">Preferências do aplicativo</h2><p class="section-summary">Conheça as abas de aparência, radar, monitoramento, armazenamento e informações.</p></div>
+  <div class="section-content">
+<p>Acesse <strong>Menu → Preferências</strong> ou pressione <kbd>Alt+,</kbd>. A janela de configurações apresenta um seletor de páginas na parte inferior.</p>
+<h3>Aparência</h3><p>Escolha o idioma (automático, inglês americano ou português brasileiro), tema (sistema, claro ou escuro), provedor de mapas, aeroportos visíveis, modo torre, etiquetas das aeronaves e camadas meteorológicas. A troca de idioma pede reinicialização do AeroScope.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/preferencias-aparencia.webp" data-caption="Preferências → Aparência: opções principais de idioma, tema e mapa." aria-label="Ampliar imagem: Preferências → Aparência: opções principais de idioma, tema e mapa."><img loading="lazy" decoding="async" src="assets/screenshots/preferencias-aparencia.webp" alt="Preferências → Aparência: opções principais de idioma, tema e mapa."></button>
+      <figcaption><span class="figure-index">Figura 23</span> Preferências → Aparência: opções principais de idioma, tema e mapa.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/preferencias-aparencia-detalhes.webp" data-caption="Preferências → Aparência: visualização completa das opções e meteorologia." aria-label="Ampliar imagem: Preferências → Aparência: visualização completa das opções e meteorologia."><img loading="lazy" decoding="async" src="assets/screenshots/preferencias-aparencia-detalhes.webp" alt="Preferências → Aparência: visualização completa das opções e meteorologia."></button>
+      <figcaption><span class="figure-index">Figura 24</span> Preferências → Aparência: visualização completa das opções e meteorologia.</figcaption></figure></div>
+<h3>Radar</h3><p>Configure os intervalos de atualização regional, preparação inicial, animação de aeronaves, perspectiva visual por altitude, unidade principal de velocidade, resumos de ponteiro, fotografias, histórico de voos e localização aproximada por IP.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/preferencias-radar.webp" data-caption="Preferências → Radar: atualização, animação, unidades e localização." aria-label="Ampliar imagem: Preferências → Radar: atualização, animação, unidades e localização."><img loading="lazy" decoding="async" src="assets/screenshots/preferencias-radar.webp" alt="Preferências → Radar: atualização, animação, unidades e localização."></button>
+      <figcaption><span class="figure-index">Figura 25</span> Preferências → Radar: atualização, animação, unidades e localização.</figcaption></figure>
+<h3>Monitor</h3><p>Defina intervalos e notificações dos favoritos, monitoramento de METARs, atualização de emergências, alerta sonoro, início automático e comportamento ao fechar a janela. As consultas podem continuar no segundo plano quando essa opção está ativa e o ambiente permite acesso ao aplicativo.</p>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/preferencias-monitor.webp" data-caption="Preferências → Monitor: favoritos, boletins, emergências e operação em segundo plano." aria-label="Ampliar imagem: Preferências → Monitor: favoritos, boletins, emergências e operação em segundo plano."><img loading="lazy" decoding="async" src="assets/screenshots/preferencias-monitor.webp" alt="Preferências → Monitor: favoritos, boletins, emergências e operação em segundo plano."></button>
+      <figcaption><span class="figure-index">Figura 26</span> Preferências → Monitor: favoritos, boletins, emergências e operação em segundo plano.</figcaption></figure>
+<h3>Armazenamento e informações</h3><p>Em <strong>Armazenamento</strong>, limpe o cache próprio e os rastros da sessão. O cache compartilhado de mapas do Libshumate não é apagado. Em <strong>Informações</strong>, veja os provedores utilizados e os limites de uso.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/preferencias-armazenamento.webp" data-caption="Preferências → Armazenamento: limpeza de arquivos temporários e rastros." aria-label="Ampliar imagem: Preferências → Armazenamento: limpeza de arquivos temporários e rastros."><img loading="lazy" decoding="async" src="assets/screenshots/preferencias-armazenamento.webp" alt="Preferências → Armazenamento: limpeza de arquivos temporários e rastros."></button>
+      <figcaption><span class="figure-index">Figura 27</span> Preferências → Armazenamento: limpeza de arquivos temporários e rastros.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/preferencias-informacoes.webp" data-caption="Preferências → Informações: fontes de dados e aviso de uso." aria-label="Ampliar imagem: Preferências → Informações: fontes de dados e aviso de uso."><img loading="lazy" decoding="async" src="assets/screenshots/preferencias-informacoes.webp" alt="Preferências → Informações: fontes de dados e aviso de uso."></button>
+      <figcaption><span class="figure-index">Figura 28</span> Preferências → Informações: fontes de dados e aviso de uso.</figcaption></figure></div>
+<aside class="callout note"><span class="callout-symbol" aria-hidden="true">ⓘ</span><div><strong>Observação</strong><p>As opções exibidas nas capturas correspondem à versão <strong>0.3.70</strong>. Algumas escolhas exigem nova consulta, reinicialização ou dependem das permissões do ambiente gráfico.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="atalhos" aria-labelledby="title-atalhos">
+  <div class="section-head"><span class="eyebrow">Produtividade <span class="section-counter">/ 14</span></span><h2 id="title-atalhos">Atalhos de teclado e menus</h2><p class="section-summary">Referência dos comandos da versão 0.3.70.</p></div>
+  <div class="section-content">
+<p>Pressione <kbd>F1</kbd> para abrir a janela de atalhos. Os atalhos próprios do AeroScope usam <strong>Alt</strong>; as operações comuns de texto como <strong>Ctrl+A, Ctrl+C e Ctrl+V</strong> continuam reservadas ao sistema.</p>
+<div class="gallery"><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/menu-principal.webp" data-caption="Menu principal com os atalhos apresentados ao lado das opções." aria-label="Ampliar imagem: Menu principal com os atalhos apresentados ao lado das opções."><img loading="lazy" decoding="async" src="assets/screenshots/menu-principal.webp" alt="Menu principal com os atalhos apresentados ao lado das opções."></button>
+      <figcaption><span class="figure-index">Figura 29</span> Menu principal com os atalhos apresentados ao lado das opções.</figcaption></figure><figure class="screenshot ">
+      <button class="image-button" type="button" data-image="assets/screenshots/atalhos-teclado.webp" data-caption="Janela nativa de atalhos do AeroScope." aria-label="Ampliar imagem: Janela nativa de atalhos do AeroScope."><img loading="lazy" decoding="async" src="assets/screenshots/atalhos-teclado.webp" alt="Janela nativa de atalhos do AeroScope."></button>
+      <figcaption><span class="figure-index">Figura 30</span> Janela nativa de atalhos do AeroScope.</figcaption></figure></div>
+<div class="table-scroll"><table class="shortcut-table"><thead><tr><th>Atalho</th><th>Ação</th><th>Atalho</th><th>Ação</th></tr></thead><tbody>
+<tr><td><kbd>Alt++</kbd></td><td>Aproximar mapa</td><td><kbd>Alt+−</kbd></td><td>Afastar mapa</td></tr>
+<tr><td><kbd>Alt+.</kbd> / <kbd>Alt+L</kbd></td><td>Localizar</td><td><kbd>Alt+F</kbd></td><td>Pesquisar</td></tr>
+<tr><td><kbd>Alt+T</kbd></td><td>Modo torre</td><td><kbd>Alt+S</kbd></td><td>Varredura giratória</td></tr>
+<tr><td><kbd>Alt+M</kbd></td><td>METAR</td><td><kbd>Alt+A</kbd></td><td>SIGMET</td></tr>
+<tr><td><kbd>Alt+P</kbd></td><td>Mini-mapa (PiP)</td><td><kbd>Alt+B</kbd></td><td>Favoritos</td></tr>
+<tr><td><kbd>Alt+V</kbd></td><td>Aeronaves visíveis</td><td><kbd>Alt+E</kbd></td><td>Emergências</td></tr>
+<tr><td><kbd>Alt+,</kbd></td><td>Preferências</td><td><kbd>Alt+Q</kbd></td><td>Sair</td></tr>
+<tr><td><kbd>F1</kbd></td><td>Atalhos</td><td><kbd>F11</kbd></td><td>Painel em tela cheia</td></tr>
+<tr><td><kbd>Esc</kbd></td><td>Sair da tela cheia</td><td><kbd>← ↑ ↓ →</kbd></td><td>Deslocar mapa quando focado</td></tr>
+</tbody></table></div>
+<p>Na digitação de texto, o foco determina quais teclas controlam o campo ou o mapa. Algumas disposições de teclado exigem combinação com Shift para digitar <strong>+</strong>.</p>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="localizacao" aria-labelledby="title-localizacao">
+  <div class="section-head"><span class="eyebrow">Permissões <span class="section-counter">/ 15</span></span><h2 id="title-localizacao">Localização e privacidade</h2><p class="section-summary">Entenda o uso de GeoClue, IP aproximado, cache e dados locais.</p></div>
+  <div class="section-content">
+<p>O AeroScope tenta usar os mecanismos de localização disponibilizados pelo ambiente desktop (por exemplo, GeoClue), respeitando as permissões. Se o serviço estiver indisponível ou desativado, o usuário pode optar por localização aproximada por IP.</p>
+<ol class="steps"><li>Use o controle de localização no mapa ou a ação <strong>Localização aproximada por IP</strong> no menu.</li><li>Leia o aviso de privacidade quando apresentado.</li><li>Aceite a consulta por IP somente se desejar: a posição aproximada poderá variar por provedor, roteamento ou VPN.</li><li>Revogue a autorização lembrada em <strong>Preferências → Radar</strong>, caso queira receber a confirmação novamente.</li></ol>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/inicio-localizacao.webp" data-caption="Exemplo do estado inicial em que a localização ainda está sendo resolvida." aria-label="Ampliar imagem: Exemplo do estado inicial em que a localização ainda está sendo resolvida."><img loading="lazy" decoding="async" src="assets/screenshots/inicio-localizacao.webp" alt="Exemplo do estado inicial em que a localização ainda está sendo resolvida."></button>
+      <figcaption><span class="figure-index">Figura 31</span> Exemplo do estado inicial em que a localização ainda está sendo resolvida.</figcaption></figure>
+<p>As Preferências são salvas no diretório local de configuração do usuário. Rastros da sessão e históricos carregados permanecem na memória e podem ser apagados no painel Armazenamento. A consulta por IP não é necessária para utilizar o mapa manualmente.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>Localização aproximada por IP não equivale a GPS, e não deve ser interpretada como posição exata do dispositivo.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="solucao" aria-labelledby="title-solucao">
+  <div class="section-head"><span class="eyebrow">Ajuda <span class="section-counter">/ 16</span></span><h2 id="title-solucao">Solução de problemas</h2><p class="section-summary">Respostas para situações comuns no uso diário.</p></div>
+  <div class="section-content">
+<div class="faq"><details><summary>O mapa abriu, mas não vejo aeronaves. O que verificar?</summary><p>Confira a conexão, aguarde as primeiras consultas e aproxime o zoom para uma região com cobertura. Use a atualização manual, respeitando o intervalo mínimo. Uma tela vazia pode significar ausência de dados da API, sem necessariamente indicar defeito do aplicativo.</p></details>
+<details><summary>Por que alguns aviões não têm matrícula, foto ou origem/destino?</summary><p>Essas informações dependem de campos transmitidos e de associações feitas por fornecedores externos. Elas não são garantidas para todas as aeronaves. Fotos são opcionais e consultadas apenas quando necessárias.</p></details>
+<details><summary>O histórico do voo não aparece.</summary><p>Verifique se a consulta de histórico está ativada em Preferências → Radar. O serviço de arquivo pode não ter registros recentes ou estar temporariamente indisponível; lacunas são esperadas.</p></details>
+<details><summary>A varredura está ativada, mas não parecem surgir dados novos.</summary><p>O varrimento é um efeito gráfico. A obtenção de posições continua obedecendo ao intervalo do serviço ADS-B; ativar a linha não aumenta a frequência de consulta.</p></details>
+<details><summary>Não consigo manter o mini-mapa acima de outras janelas.</summary><p>O comportamento depende do servidor gráfico e do gerenciador de janelas. Em sessões Wayland, a política de janelas pode impedir o pedido de sempre no topo.</p></details>
+<details><summary>Por que o navegador interno não abre algumas páginas?</summary><p>O WebKitGTK é opcional para páginas externas autorizadas. Se estiver ausente, o AeroScope pode usar o navegador padrão. O manual local também tem abertura alternativa no navegador padrão.</p></details>
+<details><summary>O mapa ou a meteorologia parecem atrasados.</summary><p>As consultas são feitas em intervalos diferentes e incluem cache e limites de frequência. Consulte os horários dos boletins e a hora indicada pela interface; uma nova região pode exigir outra solicitação.</p></details>
+<details><summary>O aplicativo continua ativo depois de fechar a janela.</summary><p>Confira as opções <strong>Continuar monitorando ao fechar</strong>, <strong>Mostrar mini-mapa ao fechar</strong> e início automático em Preferências → Monitor. Use <strong>Sair do AeroScope</strong> no menu quando desejar encerrar o processo.</p></details></div>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+<section class="manual-section" id="creditos" aria-labelledby="title-creditos">
+  <div class="section-head"><span class="eyebrow">Referências <span class="section-counter">/ 17</span></span><h2 id="title-creditos">Fontes, créditos e informações legais</h2><p class="section-summary">Conheça os provedores envolvidos e os limites de uso.</p></div>
+  <div class="section-content">
+<p>Os dados externos e os mapas estão sujeitos à disponibilidade, licença e política de cada provedor. O AeroScope apresenta seus créditos no aplicativo e sobre o mapa quando exigidos.</p>
+<div class="table-scroll"><table><thead><tr><th>Fonte</th><th>Utilização no AeroScope</th></tr></thead><tbody>
+<tr><td>ADSB.lol</td><td>Posições regionais atuais e associações disponíveis.</td></tr>
+<tr><td>ADSB.aero</td><td>Registros históricos arquivados.</td></tr>
+<tr><td>Planespotters.net</td><td>Fotografias de aeronaves e créditos dos autores.</td></tr>
+<tr><td>NOAA Aviation Weather Center</td><td>Observações METAR e avisos SIGMET.</td></tr>
+<tr><td>OpenStreetMap / OpenTopoMap-R / OpenHikingMap</td><td>Mapas e dados geográficos, com atribuições específicas.</td></tr>
+<tr><td>Open-Meteo</td><td>Pesquisa de nomes de cidades em localidades compatíveis.</td></tr>
+</tbody></table></div>
+<figure class="screenshot wide">
+      <button class="image-button" type="button" data-image="assets/screenshots/sobre-aeroscope.webp" data-caption="Janela Sobre do AeroScope, com versão, informações do projeto e créditos." aria-label="Ampliar imagem: Janela Sobre do AeroScope, com versão, informações do projeto e créditos."><img loading="lazy" decoding="async" src="assets/screenshots/sobre-aeroscope.webp" alt="Janela Sobre do AeroScope, com versão, informações do projeto e créditos."></button>
+      <figcaption><span class="figure-index">Figura 32</span> Janela Sobre do AeroScope, com versão, informações do projeto e créditos.</figcaption></figure>
+<p>Projeto de código aberto. Consulte o arquivo <code>LICENSE</code> e o repositório oficial para condições de distribuição, código-fonte e relato de problemas. Este manual descreve as funcionalidades observadas no código da versão 0.3.70 e nas capturas fornecidas.</p>
+<aside class="callout warning"><span class="callout-symbol" aria-hidden="true">!</span><div><strong>Importante</strong><p>Dados de rastreamento e boletins mostrados aqui são informativos e podem estar incompletos ou atrasados. Não são sistemas certificados para uso aeronáutico.</p></div></aside>
+</div>
+  <a class="backtop" href="#inicio">↑ Voltar ao início</a>
+</section>
+      <footer><img src="assets/aeroscope.svg" width="34" height="34" alt=""><div><strong>AeroScope</strong><p>Manual HTML5 offline · versão 0.3.70 · imagens reais do aplicativo.</p><small>As capturas de tela podem apresentar dados momentâneos, sujeitos a mudanças.</small></div><a href="#inicio">Voltar ao topo ↑</a></footer></div>
+    </main>
+  </div>
+  <dialog id="lightbox" class="lightbox" aria-label="Visualização ampliada"><div class="lightbox-toolbar"><div class="lightbox-caption" id="lightbox-caption"></div><div class="lightbox-actions"><button id="lightbox-prev" type="button" aria-label="Imagem anterior">‹</button><span id="lightbox-index"></span><button id="lightbox-next" type="button" aria-label="Próxima imagem">›</button><button id="lightbox-close" type="button" aria-label="Fechar imagem">✕</button></div></div><div class="lightbox-body"><img id="lightbox-image" alt="Captura de tela ampliada"></div><p class="lightbox-hint">Use ← → para trocar de imagem e Esc para fechar.</p></dialog>
+</body></html>
