@@ -8,7 +8,7 @@
   Radar de aeronaves em tempo quase real, meteorologia aeronáutica, histórico de voos e monitoramento de alertas — em uma interface nativa com GTK4 e Libadwaita.
 
   <p>
-    <img alt="Versão 0.3.70" src="https://img.shields.io/badge/vers%C3%A3o-0.3.70-19677e?style=flat-square" />
+    <img alt="Versão 0.3.72" src="https://img.shields.io/badge/vers%C3%A3o-0.3.72-19677e?style=flat-square" />
     <img alt="Linux" src="https://img.shields.io/badge/plataforma-Linux-3c556a?style=flat-square&logo=linux" />
     <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776ab?style=flat-square&logo=python&logoColor=white" />
     <img alt="GTK4 e Libadwaita" src="https://img.shields.io/badge/interface-GTK4%20%2B%20Libadwaita-4a6d84?style=flat-square" />
@@ -23,7 +23,7 @@
 </p>
 
 > [!NOTE]
-> **Projeto aberto e em evolução.** Esta documentação corresponde ao **AeroScope 0.3.70**. O manual ilustrado completo será disponibilizado em uma **URL externa**, independentemente das atualizações do aplicativo. Ele **não está incorporado** a este repositório nem ao pacote `.deb` original.
+> **Projeto aberto e em evolução.** Esta documentação corresponde ao **AeroScope 0.3.72**. O manual ilustrado completo será disponibilizado em uma **URL externa**, independentemente das atualizações do aplicativo. Ele **não está incorporado** a este repositório nem ao pacote `.deb` original.
 
 ## Por que o AeroScope?
 
@@ -112,10 +112,10 @@ A interface utiliza **GNU Gettext**: inglês dos EUA é o idioma original do có
 Para **Ubuntu e distribuições Debian-based compatíveis**, baixe o arquivo `.deb` publicado em **[Releases](https://github.com/ehstbr/Aeroscope/releases)** e instale com:
 
 ```bash
-sudo apt install ./aeroscope_0.3.70_all.deb
+sudo apt install ./aeroscope_0.3.72_all.deb
 ```
 
-> O nome exato do arquivo pode variar conforme o release. O pacote gerado pelo script deste projeto usa `aeroscope_0.3.70_all.deb` por padrão. O instalador instala o comando **`aeroscope`**, não `aeroscope-gtk`.
+> O nome exato do arquivo pode variar conforme o release. O pacote gerado pelo script deste projeto usa `aeroscope_0.3.72_all.deb` por padrão. O instalador instala o comando **`aeroscope`**, não `aeroscope-gtk`.
 
 ### Opção 2 — executar diretamente do código-fonte
 
@@ -155,7 +155,7 @@ bash packaging/build-deb.sh
 Por padrão, o pacote é criado **na pasta acima** do repositório. Também é possível escolher o arquivo de saída:
 
 ```bash
-bash packaging/build-deb.sh "$PWD/aeroscope_0.3.70_all.deb"
+bash packaging/build-deb.sh "$PWD/aeroscope_0.3.72_all.deb"
 ```
 
 A versão está definida no script de empacotamento e em `aeroscope/settings.py`; revise ambos ao fazer um novo release.
@@ -234,7 +234,7 @@ AeroScope/
 ├── benchmarks/      # Benchmarks de geometria
 ├── packaging/       # Gerador de .deb
 ├── run.py / run.sh  # Inicialização pelo código-fonte
-├── CHANGELOG.md     # Histórico completo até 0.3.70
+├── CHANGELOG.md     # Histórico completo até 0.3.72
 └── CONTRIBUTING.md  # Como contribuir
 ```
 
@@ -276,7 +276,7 @@ São informações complementares e dependem de correspondências nos provedores
 <details>
 <summary><b>O manual pode ser atualizado sem atualizar o programa?</b></summary>
 
-Sim. O plano do projeto é hospedar o **manual HTML em endereço externo**. Ele não faz parte do DEB da versão 0.3.70, e a URL poderá ser associada a uma opção de menu em uma versão futura.
+Sim. O plano do projeto é hospedar o **manual HTML em endereço externo**. Ele não faz parte do DEB da versão 0.3.72, e a URL poderá ser associada a uma opção de menu em uma versão futura.
 </details>
 
 ## Uso responsável
@@ -291,5 +291,5 @@ O código deste repositório é distribuído sob a **[licença MIT](LICENSE)**. 
 Criado por **Eduardo Henrique Teixeira** ([@ehstbr](https://github.com/ehstbr)), com espírito de software livre. Obrigado aos projetos de dados abertos, aos provedores de mapas e à comunidade que torna o céu mais acessível. ✈️
 
 <div align="center">
-  <sub>AeroScope • 0.3.70 • Linux • GTK4 / Libadwaita</sub>
+  <sub>AeroScope • 0.3.72 • Linux • GTK4 / Libadwaita</sub>
 </div>
