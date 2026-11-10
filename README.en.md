@@ -8,7 +8,7 @@
   A native GTK4/Libadwaita aircraft tracker with near-live flight data, aviation weather, historical playback and customizable monitoring.
 
   <p>
-    <img alt="Version 0.3.70" src="https://img.shields.io/badge/version-0.3.70-19677e?style=flat-square" />
+    <img alt="Version 0.3.72" src="https://img.shields.io/badge/version-0.3.72-19677e?style=flat-square" />
     <img alt="Linux" src="https://img.shields.io/badge/platform-Linux-3c556a?style=flat-square&logo=linux" />
     <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-3776ab?style=flat-square&logo=python&logoColor=white" />
     <img alt="GTK4 + Libadwaita" src="https://img.shields.io/badge/UI-GTK4%20%2B%20Libadwaita-4a6d84?style=flat-square" />
@@ -21,7 +21,7 @@
 <p align="center"><a href="media/screenshots/radar-aeronaves.webp"><img src="media/screenshots/radar-aeronaves.webp" width="900" alt="AeroScope main aircraft radar screen" /></a></p>
 
 > [!NOTE]
-> This documentation reflects **version 0.3.70**. The illustrated user manual will be published at an **external URL**, independently of app releases. No manual HTML is bundled with the original `.deb` or this GitHub source package.
+> This documentation reflects **version 0.3.72**. The illustrated user manual will be published at an **external URL**, independently of app releases. No manual HTML is bundled with the original `.deb` or this GitHub source package.
 
 ## Why AeroScope?
 
@@ -102,7 +102,7 @@ AeroScope uses **GNU Gettext**. Source strings are in American English, with Bra
 Get a packaged build from **[GitHub Releases](https://github.com/ehstbr/Aeroscope/releases)** when published, then run:
 
 ```bash
-sudo apt install ./aeroscope_0.3.70_all.deb
+sudo apt install ./aeroscope_0.3.72_all.deb
 ```
 
 The installed command is **`aeroscope`** (not `aeroscope-gtk`). The exact release asset filename may vary.
@@ -134,7 +134,7 @@ Alternative startup: `python3 run.py`. Demo mode: `./run.sh --demo`.
 ### Build the `.deb` yourself
 
 ```bash
-bash packaging/build-deb.sh "$PWD/aeroscope_0.3.70_all.deb"
+bash packaging/build-deb.sh "$PWD/aeroscope_0.3.72_all.deb"
 ```
 
 Default output without an argument is the parent directory. Version values are defined in `packaging/build-deb.sh` and `aeroscope/settings.py`.
@@ -231,7 +231,7 @@ A graphical session is still necessary for manual GTK/Libadwaita checks. See **[
 
 <details><summary><b>Why are route or photo details missing?</b></summary>These are optional external matches. AeroScope does not invent photos, flights or route endpoints.</details>
 
-<details><summary><b>Will the manual require a new app version?</b></summary>No. The illustrated HTML manual is planned for an external URL and is not bundled in the original 0.3.70 package.</details>
+<details><summary><b>Will the manual require a new app version?</b></summary>No. The illustrated HTML manual is planned for an external URL and is not bundled in the original 0.3.72 package.</details>
 
 ## Important safety notice
 
