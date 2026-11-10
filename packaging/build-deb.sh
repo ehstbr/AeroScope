@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="${1:-$ROOT/../aeroscope_0.3.70_all.deb}"
+OUT="${1:-$ROOT/../aeroscope_0.3.72_all.deb}"
 TEMP="$(mktemp -d)"
 trap 'rm -rf "$TEMP"' EXIT
 mkdir -p "$TEMP/DEBIAN" "$TEMP/usr/lib/aeroscope" "$TEMP/usr/bin" \
@@ -26,7 +26,7 @@ PYCODE
 chmod 0755 "$TEMP/usr/bin/aeroscope"
 cat > "$TEMP/DEBIAN/control" <<'CONTROL'
 Package: aeroscope
-Version: 0.3.70
+Version: 0.3.72
 Section: science
 Priority: optional
 Architecture: all

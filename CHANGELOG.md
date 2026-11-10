@@ -1,3 +1,27 @@
+## AeroScope 0.3.72 — unified refresh menu and NOAA status subtitle
+
+- **Native refresh menu:** the single refresh icon in the header opens the
+  same GTK/Gio-style menu as the application's hamburger button. Choose All,
+  Aircraft, METAR or SIGMET; no adjacent split arrow or implicit action.
+- **NOAA updates in the subtitle:** manual METAR/SIGMET progress, rate-limit
+  waits, in-flight requests, and results use the existing window subtitle,
+  never a transient toast. Notices briefly take precedence over routine ADS-B
+  updates, then restore the latest ADS-B status; ADS-B errors remain visible.
+- **Unchanged data policy:** per-product 60-second minimum, independent NOAA
+  scheduling, and preservation of unrelated meteorological data remain intact.
+
+---
+
+## AeroScope 0.3.71 — manual refresh by source
+
+The header refresh control is now a split button. Its main icon refreshes aircraft
+and enabled METAR/SIGMET layers. The adjacent arrow lets you refresh **All**,
+**Aircraft**, **METAR**, or **SIGMET** independently. NOAA manual refreshes may
+bypass the 15-minute automatic cycle but observe a 60-second per-product request
+floor; an in-flight weather request is coalesced or queued. A METAR-only refresh
+preserves existing SIGMET data, and vice versa. The rest of the app's automatic
+polling and Ctrl/Alt/F-key shortcuts are unchanged.
+
 # AeroScope 0.3.70 — Navegação suave pelas teclas de seta
 
 - **Setas ← ↑ ↓ →:** deslocamento em pixels, com aceleração suave enquanto pressionadas e pequena desaceleração ao soltar. Duas teclas permitem movimento diagonal sem excesso de velocidade.

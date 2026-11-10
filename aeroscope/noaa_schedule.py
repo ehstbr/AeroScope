@@ -28,3 +28,15 @@ def weather_refresh_decision(now: float, due_at: float, current_center,
     if remaining > 0:
         return False, remaining
     return True, 0.0
+
+
+def merge_weather_products(previous, fresh, errors, *, metar: bool, sigmet: bool):
+    """Replace only successfully requested NOAA products.
+
+    A SIGMET-only request never clears METAR or vice versa. Partial NOAA
+    failure preserves the last valid report, including an empty valid list.
+    """
+    prev_metar, prev_sigmet = previous if previous is not None else ([], [])
+    new_metar, new_sigmet = fresh
+    return (new_metar if metar and 'metar' not in errors else prev_metar,
+            new_sigmet if sigmet and 'sigmet' not in errors else prev_sigmet)

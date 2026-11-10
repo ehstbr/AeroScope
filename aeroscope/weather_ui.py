@@ -13,7 +13,7 @@ from pathlib import Path
 
 from gi.repository import Gdk, GLib, Gtk, Shumate
 
-from .noaa_schedule import weather_refresh_decision
+from .noaa_schedule import weather_refresh_decision, merge_weather_products
 from .weather_data import (fetch_noaa_with_errors, fetch_metar_station,
                            fetch_metar_stations, known_airport_icaos_for_bbox, noaa_bbox,
                            fetch_sigmets_bbox)
@@ -418,7 +418,12 @@ class WeatherManager:
         self._main_sigmet_snapshot = ()
         self._last_sigmet_active = None
         self._noaa_busy = False
-        self._next_noaa = 0.0
+        # Separate deadlines prevent SIGMET-only requests from delaying METAR,
+        # and vice versa; background weather polling remains every 15 minutes.
+        self._next_noaa = {'metar': 0.0, 'sigmet': 0.0}
+        self._last_noaa_request = {'metar': 0.0, 'sigmet': 0.0}
+        self._noaa_inflight = frozenset()
+        self._manual_noaa_pending = set()
         self.errors = {}
         self._airport_metars = {}  # ICAO -> (checked_monotonic, metar, error)
         self._favorite_tracker = MetarChangeTracker()
@@ -429,8 +434,10 @@ class WeatherManager:
         self._airport_batch_missing = set()  # batch omissions are eligible for click lookup
         self._airport_batch_busy = False
         self._airport_batch_checked_at = 0.0
-        self._last_noaa_center = None
-        self._last_noaa_started = 0.0
+        # Region identity is also per product, so a targeted manual refresh
+        # cannot mask the need to fetch the other product after a map move.
+        self._last_noaa_center = {'metar': None, 'sigmet': None}
+        self._last_noaa_started = {'metar': 0.0, 'sigmet': 0.0}
         self._deferred_noaa_source = 0
         GLib.timeout_add_seconds(30, self.tick)
         GLib.timeout_add_seconds(60, self._refresh_sigmet_validity)
@@ -447,7 +454,7 @@ class WeatherManager:
             self.radar._clear_selected()
         for view in self.views:
             view.update()
-        self._next_noaa = 0.0
+        self._next_noaa = {'metar': 0.0, 'sigmet': 0.0}
         self.tick()
 
     def presentation_changed(self, key):
@@ -487,7 +494,7 @@ class WeatherManager:
             return self.radar.viewport
         return None
 
-    def _refresh_known_airport_metars(self, center):
+    def _refresh_known_airport_metars(self, center, force=False):
         """Fetch the markers' own NOAA stations as one asynchronous batch.
 
         The NOAA geo-bbox response alone may omit a known airport, or return a
@@ -501,7 +508,7 @@ class WeatherManager:
         due = [code for code in stations
                if code not in self._airport_pending and
                (code not in self._airport_metars or
-                now - self._airport_metars[code][0] >= self.NOAA_SECONDS)]
+                now - self._airport_metars[code][0] >= (60 if force else self.NOAA_SECONDS))]
         if not due:
             return
         self._airport_batch_busy = True
@@ -675,6 +682,82 @@ class WeatherManager:
         self._last_sigmet_active = new
         return GLib.SOURCE_CONTINUE
 
+    def _begin_noaa(self, center, products, *, manual=False):
+        """Issue one selective NOAA request, preserving the non-requested data."""
+        products = frozenset(products)
+        if not products or self._noaa_busy:
+            return False
+        if self._deferred_noaa_source:
+            GLib.source_remove(self._deferred_noaa_source)
+            self._deferred_noaa_source = 0
+        self._noaa_busy = True
+        self._noaa_inflight = products
+        now = time.monotonic()
+        for product in products:
+            self._last_noaa_center[product] = center
+            self._last_noaa_started[product] = now
+            self._last_noaa_request[product] = now
+        metar, sigmet = 'metar' in products, 'sigmet' in products
+        if manual:
+            names = ' + '.join(p.upper() for p in ('metar', 'sigmet') if p in products)
+            self.radar.set_weather_status(
+                _('Updating {value0}…').format(value0=names), hold=30)
+            if metar:
+                # The geo-bbox might omit known airport identifiers, so also
+                # refresh those stations in one batch with a 60-second floor.
+                self._refresh_known_airport_metars(center, force=True)
+                self.refresh_favorite_metars(force=True)
+        self.radar._async(
+            lambda: fetch_noaa_with_errors(*center, metar=metar, sigmet=sigmet),
+            lambda result, error, location=center, products=products, manual=manual:
+            self._noaa_done(result, error, location, products, manual=manual))
+        return True
+
+    def refresh_now(self, products):
+        """User-triggered METAR/SIGMET refresh, independent of ADS-B polling.
+
+        Bypass the 15-minute NOAA cache, but respect a 60-second minimum gap
+        per product and coalesce requests while an earlier call is in flight.
+        """
+        if self.radar.demo:
+            self.radar.set_weather_status(_('Weather refresh is unavailable in demo mode.'))
+            return False
+        requested = set(products)
+        if not requested or not requested <= {'metar', 'sigmet'}:
+            return False
+        viewport = self._visible_viewport()
+        if viewport is None:
+            self.radar.set_weather_status(_('Open the map to refresh weather data.'))
+            return False
+        if self._noaa_busy:
+            # An existing request for the same kind already satisfies this
+            # choice. Queue only products not covered by the in-flight call.
+            missing = requested - self._noaa_inflight
+            if missing:
+                self._manual_noaa_pending.update(missing)
+                names = ' + '.join(k.upper() for k in ('metar', 'sigmet') if k in missing)
+                self.radar.set_weather_status(
+                    _('NOAA {value0}: queued; waiting for the current update…').format(value0=names))
+            else:
+                names = ' + '.join(k.upper() for k in ('metar', 'sigmet') if k in requested)
+                self.radar.set_weather_status(
+                    _('NOAA {value0}: update already in progress…').format(value0=names))
+            return bool(missing)
+        now = time.monotonic()
+        allowed = {kind for kind in requested
+                   if not self._last_noaa_request[kind] or
+                   now - self._last_noaa_request[kind] >= 60}
+        if not allowed:
+            remaining = max(1, int(min(
+                60 - (now - self._last_noaa_request[kind]) for kind in requested)) + 1)
+            names = ' + '.join(k.upper() for k in ('metar', 'sigmet') if k in requested)
+            self.radar.set_weather_status(
+                _('NOAA {value0}: wait {value1} s before refreshing again.').format(
+                    value0=names, value1=remaining))
+            return False
+        center = (viewport.get_latitude(), viewport.get_longitude())
+        return self._begin_noaa(center, allowed, manual=True)
+
     def tick(self):
         dashboard = getattr(self.radar, 'dashboard', None)
         if (not self.radar.demo and
@@ -688,86 +771,104 @@ class WeatherManager:
             return GLib.SOURCE_CONTINUE
         now = time.monotonic()
         opts = self.radar.settings
-        if not (opts.get('weather_metar') or opts.get('weather_sigmet')):
+        enabled = [kind for kind in ('metar', 'sigmet')
+                   if opts.get('weather_' + kind)]
+        if not enabled:
             return GLib.SOURCE_CONTINUE
         if self._noaa_busy:
-            # The completion callback will check whether the viewport moved
-            # while this request was running and start/schedule a new region.
+            # Completion checks for changed viewport or pending manual work.
             return GLib.SOURCE_CONTINUE
         center = (vp.get_latitude(), vp.get_longitude())
-        if opts.get('weather_metar'):
-            # Known airport badges update independently from the regional
-            # bbox overlay; callbacks are shared by main window and PiP.
+        if 'metar' in enabled:
             self._refresh_known_airport_metars(center)
-        refresh, delay = weather_refresh_decision(
-            now, self._next_noaa, center, self._last_noaa_center, self._last_noaa_started)
-        if not refresh:
+        due = set()
+        delay = 0.0
+        for product in enabled:
+            refresh, remaining = weather_refresh_decision(
+                now, self._next_noaa[product], center,
+                self._last_noaa_center[product], self._last_noaa_started[product])
+            if refresh:
+                due.add(product)
+            elif remaining:
+                delay = remaining if not delay else min(delay, remaining)
+        if not due:
             if delay:
                 self._schedule_deferred_region(delay)
             return GLib.SOURCE_CONTINUE
-        if self._deferred_noaa_source:
-            GLib.source_remove(self._deferred_noaa_source)
-            self._deferred_noaa_source = 0
-        self._last_noaa_center = center
-        self._last_noaa_started = now
-        self._noaa_busy = True
-        metar = bool(opts.get('weather_metar'))
-        sigmet = bool(opts.get('weather_sigmet'))
-        self.radar._async(lambda: fetch_noaa_with_errors(*center, metar=metar, sigmet=sigmet),
-                          lambda result, error, location=center, has_sigmet=sigmet:
-                          self._noaa_done(result, error, location, has_sigmet))
+        self._begin_noaa(center, due)
         return GLib.SOURCE_CONTINUE
 
-    def _noaa_done(self, result, error, location=None, has_sigmet=True):
+    def _noaa_done(self, result, error, location=None, products=frozenset(('metar', 'sigmet')),
+                   *, manual=False):
         self._noaa_busy = False
-        # Interval begins once the response (or failure) is received, not when
-        # the request was launched. Region changes may bring it forward.
-        self._next_noaa = time.monotonic() + self.NOAA_SECONDS
+        self._noaa_inflight = frozenset()
+        requested_metar, requested_sigmet = 'metar' in products, 'sigmet' in products
+        # Deadline is per product: a SIGMET-only manual update must not make
+        # a stale METAR cache appear fresh to the automatic scheduler.
+        completed_at = time.monotonic()
+        for kind in products:
+            self._next_noaa[kind] = completed_at + self.NOAA_SECONDS
         if error is not None:
             LOG.warning(_('NOAA METAR/SIGMET: request failed: %s'), error)
-            self.errors = {k: str(error) for k in ('metar', 'sigmet')
-                           if self.radar.settings.get('weather_' + k)}
+            self.errors.update({kind: str(error) for kind in products})
+            if manual:
+                names = ' + '.join(k.upper() for k in ('metar', 'sigmet') if k in products)
+                self.radar.set_weather_status(
+                    _('NOAA {value0}: update failed; previous data kept.').format(value0=names),
+                    error=True, hold=8)
         else:
             metars, sigmets, errors = result
-            self.errors = errors
+            for kind in products:
+                if kind in errors:
+                    self.errors[kind] = errors[kind]
+                else:
+                    self.errors.pop(kind, None)
             if errors:
                 for kind, detail in errors.items():
                     LOG.warning('NOAA %s: %s', kind.upper(), detail)
-            if (self.radar.settings.get('weather_sigmet')
-                    and 'sigmet' not in errors and not sigmets):
+            if requested_sigmet and 'sigmet' not in errors and not sigmets:
                 LOG.info(_('SIGMET: no active advisories in the requested area'))
-            if (self.radar.settings.get('weather_metar')
-                    and 'metar' not in errors and not metars):
+            if requested_metar and 'metar' not in errors and not metars:
                 LOG.info(_('METAR: no stations with observations in the requested area'))
-            # Preserve the last valid result when one product fails.
-            prev_metars, prev_sigmets = self.noaa if self.noaa is not None else ([], [])
-            self.noaa = (metars if 'metar' not in errors else prev_metars,
-                         sigmets if has_sigmet and 'sigmet' not in errors else prev_sigmets)
-            if 'sigmet' not in errors and has_sigmet:
+            # A successful *empty* response is valid; a failed or unrequested
+            # product keeps the last good snapshot instead of disappearing.
+            self.noaa = merge_weather_products(
+                self.noaa, (metars, sigmets), errors,
+                metar=requested_metar, sigmet=requested_sigmet)
+            if requested_sigmet and 'sigmet' not in errors:
                 self._main_sigmet_center = location
-                self._main_sigmet_received = time.monotonic()
+                self._main_sigmet_received = completed_at
                 self._main_sigmet_snapshot = tuple(sigmets)
-            if has_sigmet and 'sigmet' not in errors:
-                # Prepare normalized immutable-ish geometry once, not on each
-                # view update or every pan/zoom frame. Both maps share it.
                 self.sigmet_scene = prepare_sigmets(
                     sigmets, sigmet_label_point, previous=self.sigmet_scene)
                 LOG.info(_('SIGMET: %d outlined advisories (of %d received)'),
                          len(self.sigmet_scene), len(sigmets))
+            if manual:
+                if errors:
+                    names = ' + '.join(k.upper() for k in ('metar', 'sigmet') if k in products)
+                    self.radar.set_weather_status(
+                        _('NOAA {value0}: partially updated; previous data kept.').format(value0=names),
+                        error=True, hold=8)
+                else:
+                    names = ' + '.join(k.upper() for k in ('metar', 'sigmet') if k in products)
+                    self.radar.set_weather_status(
+                        _('NOAA {value0}: updated.').format(value0=names))
         for view in self.views:
             view.update()
         if self.radar.selected_airport is not None or self.radar.selected_weather_station is not None:
             self.radar._render_details()
         self._notify_favorites_panel()
-        # Repaint existing airport code chips with newly available VFR/IFR
-        # categories; this is purely a local update, never another API call.
-        if self.radar.settings.get('weather_metar'):
+        if requested_metar and self.radar.settings.get('weather_metar'):
             self.radar._rebuild_airports()
             pip = getattr(self.radar.get_application(), 'pip_window', None)
             if pip is not None and pip.get_visible():
                 pip.sync_airports()
-        # Handle a destination reached while the preceding NOAA request was
-        # in flight; same-region requests still respect the 15-minute timer.
+        # First service a distinct manual request queued during the previous
+        # HTTP call, then the automatic interval/region scheduler.
+        queued = tuple(sorted(self._manual_noaa_pending))
+        self._manual_noaa_pending.clear()
+        if queued:
+            self.refresh_now(queued)
         self.tick()
         return GLib.SOURCE_REMOVE
 

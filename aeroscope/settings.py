@@ -13,7 +13,7 @@ from .autostart import enabled as autostart_enabled
 
 APP_ID = 'io.github.ehstbr.Aeroscope'
 GITHUB = 'https://github.com/ehstbr/Aeroscope'
-VERSION = '0.3.70'
+VERSION = '0.3.72'
 CONFIG_DIR = Path(os.environ.get('XDG_CONFIG_HOME', Path.home() / '.config')) / 'aeroscope'
 CACHE_DIR = Path(os.environ.get('XDG_CACHE_HOME', Path.home() / '.cache')) / 'aeroscope'
 DEFAULT = {

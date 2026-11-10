@@ -65,6 +65,7 @@ from .sidebar_layout import (needs_wrap, detail_needs_stacking,
 from .dashboard import DashboardController
 from .keyboard_shortcuts import keyboard_command, MENU_ACCELERATORS
 from .keyboard_pan import KeyboardPan, KEY_DIRECTIONS
+from .refresh_selection import refresh_targets
 from .map_orientation import lock_north_up
 from .tower_radar import (bearing_on_screen, crossed_clockwise, crossed_moving_target, ring_label,
                           meters_per_pixel, full_map_radius, clock_hour_bearings,
@@ -442,6 +443,12 @@ class RadarWindow(Adw.ApplicationWindow):
         self._pending_anchor = None
         self._last_api_request = 0.0
         self._cooldown_until = 0.0
+        # Weather messages share the native title subtitle with ADS-B status.
+        # Keep the most recent ADS-B message for restoration after a short
+        # transient NOAA update/wait notification expires.
+        self._last_radar_status = (_('Connecting to API…'), False)
+        self._weather_status_until = 0.0
+        self._weather_status_token = 0
         self.bearings = {}
         self.hover_hex = None
         self._animation_source = 0
@@ -681,10 +688,24 @@ class RadarWindow(Adw.ApplicationWindow):
         header = Adw.HeaderBar()
         self.window_title = Adw.WindowTitle(title='AeroScope', subtitle=_('Connecting to API…'))
         header.set_title_widget(self.window_title)
-        # The geolocation shortcut already lives with +/− on the map.
-        # Restore the manual radar refresh action mistakenly removed in 0.3.30.
-        header.pack_end(icon_button('view-refresh-symbolic', _('Refresh aircraft'),
-                                    lambda *_: self.refresh()))
+        # Match the native hamburger menu: one icon opens a standard Gio.Menu.
+        # A selection triggers exactly the chosen source, never a blind refresh.
+        refresh_menu = Gio.Menu()
+        for label, option in (
+                (_('Refresh all'), 'all'),
+                (_('Refresh aircraft'), 'aircraft'),
+                (_('Refresh METAR'), 'metar'),
+                (_('Refresh SIGMET'), 'sigmet')):
+            action = Gio.SimpleAction.new('refresh-' + option, None)
+            action.connect('activate', lambda _action, _param, mode=option:
+                           self._manual_refresh(mode))
+            self.add_action(action)
+            refresh_menu.append(label, 'win.refresh-' + option)
+        refresh_button = Gtk.MenuButton(
+            icon_name='view-refresh-symbolic',
+            tooltip_text=_('Choose what to refresh'))
+        refresh_button.set_menu_model(refresh_menu)
+        header.pack_end(refresh_button)
         # GNOME menu sections get separators and their own descriptive labels.
         menu = Gio.Menu()
         monitoring_menu = Gio.Menu()
@@ -2496,21 +2517,56 @@ class RadarWindow(Adw.ApplicationWindow):
         else:
             self.toast.add_toast(Adw.Toast.new(str(text)))
 
-    def set_status(self, text, error=False):
-        # Use GNOME's native title/subtitle rather than reserving a toolbar
-        # across the entire width of the map. Keep strings short enough for a
-        # compact header; full error details are still available via --debug.
+    def _display_status(self, text, error=False, *, weather=False):
+        """Render either provider in the same native GNOME header subtitle."""
+        # Keep status strings short; full provider errors remain in --debug.
         message = str(text).replace('\n', ' ').strip()
         if error:
             message = '⚠ ' + message
         if self.demo and _('Demo') not in message:
             message += ' · Demo'
         anchor = getattr(self, '_query_anchor', None)
-        if anchor is not None:
+        # The 250 NM ADS-B footprint is not the NOAA METAR/SIGMET coverage.
+        if anchor is not None and not weather:
             if 'NM' not in message:
                 message += ' · 250 NM'
             message += f' · {anchor[0]:.2f}, {anchor[1]:.2f}'
         self.window_title.set_subtitle(message)
+
+    def set_status(self, text, error=False):
+        """Track ADS-B status without prematurely hiding a NOAA notification."""
+        self._last_radar_status = (text, error)
+        if time.monotonic() < self._weather_status_until and not error:
+            return
+        # A real ADS-B error takes priority over a routine weather message.
+        if error:
+            self._weather_status_until = 0.0
+            self._weather_status_token += 1
+        self._display_status(text, error)
+
+    def set_weather_status(self, text, error=False, *, hold=5):
+        """Brief NOAA progress/wait/status message in the existing subtitle."""
+        self._weather_status_token += 1
+        token = self._weather_status_token
+        self._weather_status_until = time.monotonic() + hold
+        self._display_status(text, error, weather=True)
+        GLib.timeout_add(int(hold * 1000) + 50, self._restore_radar_status, token)
+
+    def _restore_radar_status(self, token):
+        if token == self._weather_status_token:
+            self._weather_status_until = 0.0
+            self._display_status(*self._last_radar_status)
+        return GLib.SOURCE_REMOVE
+
+    def _manual_refresh(self, mode):
+        """Manual source selection must never change automatic polling options."""
+        aircraft, weather_products = refresh_targets(
+            mode, metar_enabled=bool(self.settings.get('weather_metar')),
+            sigmet_enabled=bool(self.settings.get('weather_sigmet')))
+        if aircraft:
+            self.refresh()
+        if weather_products:
+            self.weather.refresh_now(weather_products)
 
     def _auto_refresh(self):
         self.refresh()

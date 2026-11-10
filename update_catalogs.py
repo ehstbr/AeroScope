@@ -66,13 +66,36 @@ translations = {
     'Route provider returned an empty response. Try again later.': 'O serviço de rotas retornou uma resposta vazia. Tente novamente mais tarde.',
     'Route provider returned invalid data. Try again later.': 'O serviço de rotas retornou dados inválidos. Tente novamente mais tarde.',
     'found': 'encontrada',
+    'Refresh all': 'Atualizar tudo',
+    'Refresh aircraft': 'Atualizar aviões',
+    'Refresh METAR': 'Atualizar METAR',
+    'Refresh SIGMET': 'Atualizar SIGMET',
+    'Refresh all (aircraft and enabled weather layers)': 'Atualizar tudo (aviões e camadas meteorológicas ativadas)',
+    'Choose what to refresh': 'Escolher o que atualizar',
+    'Updating {value0}…': 'Atualizando {value0}…',
+    'Weather refresh is unavailable in demo mode.': 'A atualização meteorológica não está disponível no modo demonstração.',
+    'Open the map to refresh weather data.': 'Abra o mapa para atualizar os dados meteorológicos.',
+    'Weather update queued.': 'Atualização meteorológica colocada na fila.',
+    'Requested weather data is already updating.': 'Os dados meteorológicos solicitados já estão sendo atualizados.',
+    'NOAA: wait {value0} s before refreshing again.': 'NOAA: aguarde {value0} s antes de atualizar novamente.',
+    'Weather update failed; previous data kept.': 'Falha ao atualizar os dados meteorológicos; os dados anteriores foram preservados.',
+    'Weather updated partially; unavailable data kept.': 'Meteorologia parcialmente atualizada; dados indisponíveis foram preservados.',
+    'Weather data updated.': 'Dados meteorológicos atualizados.',
+    'NOAA {value0}: queued; waiting for the current update…': 'NOAA {value0}: na fila; aguardando a atualização atual…',
+    'NOAA {value0}: update already in progress…': 'NOAA {value0}: atualização já em andamento…',
+    'NOAA {value0}: wait {value1} s before refreshing again.': 'NOAA {value0}: aguarde {value1} s para atualizar novamente.',
+    'NOAA {value0}: update failed; previous data kept.': 'NOAA {value0}: falha na atualização; dados anteriores mantidos.',
+    'NOAA {value0}: partially updated; previous data kept.': 'NOAA {value0}: atualização parcial; dados anteriores mantidos.',
+    'NOAA {value0}: updated.': 'NOAA {value0}: atualizado.',
+
+
 }
 with (po_dir / 'pt_BR.po').open('rb') as f:
     br = pofile.read_po(f, locale='pt_BR')
 with (po_dir / 'en_US.po').open('rb') as f:
     en = pofile.read_po(f, locale='en_US')
 
-template = Catalog(project='AeroScope', version='0.3.62', copyright_holder='AeroScope Contributors', creation_date=None)
+template = Catalog(project='AeroScope', version='0.3.72', copyright_holder='AeroScope Contributors', creation_date=None)
 messages = {}
 for source in sorted((root / 'aeroscope').glob('*.py')):
     with source.open('rb') as f:
@@ -91,7 +114,7 @@ for msgid, locations in sorted(messages.items(), key=lambda pair: str(pair[0])):
         else:
             entry.locations = locations
 for cat in (br, en):
-    cat.version = '0.3.62'
+    cat.version = '0.3.72'
     cat.project = 'AeroScope'
 for cat in (template, br, en):
     percent = cat.get('10% translucent fill; 18% for the selected area, and subtler in tower mode.')
