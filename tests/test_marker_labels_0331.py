@@ -54,5 +54,6 @@ def test_header_location_is_not_duplicated():
     ui = (ROOT/'aeroscope'/'ui.py').read_text()
     assert 'header.pack_start(location_menu)' not in ui
     assert 'self.simple_map.set_show_zoom_buttons(False)' in ui
-    assert "header.pack_end(icon_button('view-refresh-symbolic'" in ui
+    assert "icon_name='view-refresh-symbolic'" in ui
+    assert 'header.pack_end(refresh_button)' in ui
     assert "('location-ip', self._ip_location)" in ui

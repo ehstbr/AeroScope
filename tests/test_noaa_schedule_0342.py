@@ -45,7 +45,7 @@ def test_first_snapshot_and_both_maps_wired_to_weather_scheduler():
     assert 'self.weather.region_updated()' in radar
     assert radar.count('self.weather.region_updated()') >= 2
     assert 'self.radar._view_settled()' in mini
-    assert 'self._next_noaa = time.monotonic() + self.NOAA_SECONDS' in weather
+    assert 'self._next_noaa[kind] = completed_at + self.NOAA_SECONDS' in weather
     assert 'self._schedule_deferred_region(delay)' in weather
-    assert 'self.tick()' in weather.split('def _noaa_done(self, result, error, location=None, has_sigmet=True):', 1)[1].split('def cached_metar', 1)[0]
+    assert 'self.tick()' in weather.split('    def _noaa_done(self, result, error, location=None, products=', 1)[1].split('def cached_metar', 1)[0]
     assert 'if vp is None:  # no weather polling in tray-only mode' in weather

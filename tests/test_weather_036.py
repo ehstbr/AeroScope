@@ -68,5 +68,6 @@ def test_opt_in_and_animated_zoom_wired():
 def test_weather_manager_disabled_in_tray():
     src = (ROOT/'aeroscope'/'weather_ui.py').read_text()
     assert 'if vp is None:  # no weather polling in tray-only mode' in src
-    assert "metar = bool(opts.get('weather_metar'))" in src
-    assert "sigmet = bool(opts.get('weather_sigmet'))" in src
+    assert "if opts.get('weather_' + kind)" in src
+    assert "if self._noaa_busy:" in src
+    assert "self._begin_noaa(center, due)" in src

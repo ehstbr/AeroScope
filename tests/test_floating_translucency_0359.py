@@ -29,4 +29,4 @@ def test_card_class_attached_to_floating_widget_and_no_global_opacity():
 def test_version_bumped_consistently():
     for name in ('aeroscope/__init__.py', 'aeroscope/settings.py',
                  'packaging/build-deb.sh'):
-        assert '0.3.70' in (ROOT / name).read_text()
+        assert '0.3.72' in (ROOT / name).read_text()

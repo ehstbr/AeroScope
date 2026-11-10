@@ -23,7 +23,8 @@ def test_cairo_does_not_join_label_to_next_circle():
 
 def test_header_shortcuts_corrected_in_031():
     build = _function('_build_ui')
-    assert "icon_button('view-refresh-symbolic', _('Refresh aircraft')" in build
+    assert "icon_name='view-refresh-symbolic'" in build
+    assert 'refresh_button.set_menu_model(refresh_menu)' in build
     assert "header.pack_end(appmenu)" in build
     assert 'header.pack_start(location_menu)' not in build
     # Refresh remains accessible in the sidebar monitoring actions.
